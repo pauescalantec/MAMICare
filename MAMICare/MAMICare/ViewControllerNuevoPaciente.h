@@ -10,4 +10,10 @@
 
 @interface ViewControllerNuevoPaciente : UIViewController
 
+- (IBAction)botNuevaFoto:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *outBotNuevaFoto;
+
+@property (strong, nonatomic) IBOutlet UIImageView *outFoto;
+
 @end

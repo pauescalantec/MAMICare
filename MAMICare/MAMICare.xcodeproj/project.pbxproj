@@ -15,6 +15,11 @@
 		2B3B71B91BC6EB9F001D766D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B3B71B71BC6EB9F001D766D /* LaunchScreen.storyboard */; };
 		2B3B71C41BC6EBA0001D766D /* MAMICareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B71C31BC6EBA0001D766D /* MAMICareTests.m */; };
 		2B3B71CF1BC6EBA0001D766D /* MAMICareUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B71CE1BC6EBA0001D766D /* MAMICareUITests.m */; };
+		2BD4F12A1BCF62E5007A50C0 /* newContact.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F1291BCF62E5007A50C0 /* newContact.png */; settings = {ASSET_TAGS = (); }; };
+		2BD4F12C1BCF6721007A50C0 /* searchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12B1BCF6721007A50C0 /* searchBar.png */; settings = {ASSET_TAGS = (); }; };
+		2BD4F12E1BCF67C2007A50C0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12D1BCF67C2007A50C0 /* camera.png */; settings = {ASSET_TAGS = (); }; };
+		2BD4F1301BCF6A1C007A50C0 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12F1BCF6A1C007A50C0 /* refresh.png */; settings = {ASSET_TAGS = (); }; };
+		2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */; settings = {ASSET_TAGS = (); }; };
 		2BF512FF1BC750F2002B790B /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BF512FE1BC750F2002B790B /* Background.jpg */; settings = {ASSET_TAGS = (); }; };
 		2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF513011BC752EB002B790B /* ViewControllerLogin.m */; settings = {ASSET_TAGS = (); }; };
 		2BF513041BC76249002B790B /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513031BC76249002B790B /* line.png */; settings = {ASSET_TAGS = (); }; };
@@ -70,6 +75,12 @@
 		2B3B71CA1BC6EBA0001D766D /* MAMICareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAMICareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3B71CE1BC6EBA0001D766D /* MAMICareUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMICareUITests.m; sourceTree = "<group>"; };
 		2B3B71D01BC6EBA0001D766D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BD4F1291BCF62E5007A50C0 /* newContact.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newContact.png; sourceTree = "<group>"; };
+		2BD4F12B1BCF6721007A50C0 /* searchBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBar.png; sourceTree = "<group>"; };
+		2BD4F12D1BCF67C2007A50C0 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		2BD4F12F1BCF6A1C007A50C0 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerNuevoPaciente.h; sourceTree = "<group>"; };
+		2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNuevoPaciente.m; sourceTree = "<group>"; };
 		2BF512FE1BC750F2002B790B /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		2BF513001BC752EB002B790B /* ViewControllerLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLogin.h; sourceTree = "<group>"; };
 		2BF513011BC752EB002B790B /* ViewControllerLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLogin.m; sourceTree = "<group>"; };
@@ -155,6 +166,8 @@
 				2BF513191BC78169002B790B /* ViewControllerPacientes.m */,
 				2BF5131B1BC7817A002B790B /* ViewControllerConsultar.h */,
 				2BF5131C1BC7817A002B790B /* ViewControllerConsultar.m */,
+				2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */,
+				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
 				2BF512FE1BC750F2002B790B /* Background.jpg */,
 				2BF513031BC76249002B790B /* line.png */,
 				2BF513161BC780ED002B790B /* settings.png */,
@@ -170,6 +183,10 @@
 				2BF513201BC784AA002B790B /* house.png */,
 				2BF513221BC784F6002B790B /* orangeDot.png */,
 				2BF513231BC784F6002B790B /* blueDot.png */,
+				2BD4F1291BCF62E5007A50C0 /* newContact.png */,
+				2BD4F12B1BCF6721007A50C0 /* searchBar.png */,
+				2BD4F12D1BCF67C2007A50C0 /* camera.png */,
+				2BD4F12F1BCF6A1C007A50C0 /* refresh.png */,
 				2B3B71B51BC6EB9F001D766D /* Assets.xcassets */,
 				2B3B71B21BC6EB9F001D766D /* Main.storyboard */,
 				2B3B71B71BC6EB9F001D766D /* LaunchScreen.storyboard */,
@@ -312,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B3B71B91BC6EB9F001D766D /* LaunchScreen.storyboard in Resources */,
+				2BD4F12E1BCF67C2007A50C0 /* camera.png in Resources */,
 				2BF513041BC76249002B790B /* line.png in Resources */,
 				2BF513141BC77D42002B790B /* c2.png in Resources */,
 				2BF513241BC784F6002B790B /* orangeDot.png in Resources */,
@@ -321,10 +339,13 @@
 				2BF5131F1BC78404002B790B /* baby.png in Resources */,
 				2BF513271BC78775002B790B /* back.ico in Resources */,
 				2BF5130E1BC77A63002B790B /* w3.png in Resources */,
+				2BD4F1301BCF6A1C007A50C0 /* refresh.png in Resources */,
 				2BF513211BC784AA002B790B /* house.png in Resources */,
 				2BF513131BC77D42002B790B /* c1.png in Resources */,
 				2BF513151BC77D42002B790B /* c3.png in Resources */,
+				2BD4F12A1BCF62E5007A50C0 /* newContact.png in Resources */,
 				2BF512FF1BC750F2002B790B /* Background.jpg in Resources */,
+				2BD4F12C1BCF6721007A50C0 /* searchBar.png in Resources */,
 				2B3B71B61BC6EB9F001D766D /* Assets.xcassets in Resources */,
 				2BF513171BC780ED002B790B /* settings.png in Resources */,
 				2B3B71B41BC6EB9F001D766D /* Main.storyboard in Resources */,
@@ -358,6 +379,7 @@
 				2B3B71B11BC6EB9F001D766D /* ViewController.m in Sources */,
 				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
 				2B3B71AE1BC6EB9F001D766D /* AppDelegate.m in Sources */,
+				2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */,
 				2BF5131D1BC7817A002B790B /* ViewControllerConsultar.m in Sources */,
 				2B3B71AB1BC6EB9F001D766D /* main.m in Sources */,
 			);
