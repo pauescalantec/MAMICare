@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PatientsTableViewController : UITableViewController
+@interface PatientsTableViewController : UITableViewController<UISearchBarDelegate, UISearchDisplayDelegate>
+
+// outlets
+@property (weak, nonatomic) IBOutlet UISearchBar *sbPatientSearchBar;
+
 
 @end

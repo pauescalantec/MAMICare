@@ -10,6 +10,9 @@
 
 @interface PatientsTableViewController ()
 
+@property (nonatomic, strong) NSMutableArray *patients;
+@property (nonatomic, strong) NSArray *filteredPatients;
+
 @end
 
 @implementation PatientsTableViewController
@@ -17,17 +20,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+
+#pragma Search Bar Filtering and Delegate
+
+- (void)filterPatients:(NSString*)searchText scope:(NSString*)scope {
+    NSPredicate *predicate = [NSPredicate
+                              predicateWithFormat:@"name contains[c] %@", searchText];
+    self.filteredPatients = [self.patients filteredArrayUsingPredicate:predicate];
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+    
+    NSInteger index = [self.searchDisplayController.searchBar selectedScopeButtonIndex];
+    NSArray *scopes = [self.searchDisplayController.searchBar scopeButtonTitles];
+    [self filterPatients:searchString scope:[scopes objectAtIndex:index]];
+    return YES;
+}
+
 
 #pragma mark - Table view data source
 

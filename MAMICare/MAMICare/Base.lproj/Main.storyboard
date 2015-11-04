@@ -705,6 +705,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Lista De Pacientes" id="I7a-g5-ts9"/>
                     <connections>
+                        <outlet property="sbPatientSearchBar" destination="qi0-kH-Dm4" id="rMX-OE-jwy"/>
                         <outlet property="searchDisplayController" destination="4lJ-MZ-W69" id="KNR-BI-kJm"/>
                     </connections>
                 </tableViewController>
