@@ -41,6 +41,11 @@
 		2BF513271BC78775002B790B /* back.ico in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513261BC78775002B790B /* back.ico */; };
 		CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */; };
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
+		FF5E17DE1BE99052009B0F9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17DD1BE99052009B0F9E /* User.m */; settings = {ASSET_TAGS = (); }; };
+		FF5E17E11BE9905F009B0F9E /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E01BE9905F009B0F9E /* Patient.m */; settings = {ASSET_TAGS = (); }; };
+		FF5E17E41BE99068009B0F9E /* SocialWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E31BE99068009B0F9E /* SocialWorker.m */; settings = {ASSET_TAGS = (); }; };
+		FF5E17E71BE99074009B0F9E /* Consultation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E61BE99074009B0F9E /* Consultation.m */; settings = {ASSET_TAGS = (); }; };
+		FF5E17EA1BE9907D009B0F9E /* StatusReport.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E91BE9907D009B0F9E /* StatusReport.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +115,16 @@
 		CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
 		CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsTableViewController.h; sourceTree = "<group>"; };
 		CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsTableViewController.m; sourceTree = "<group>"; };
+		FF5E17DC1BE99052009B0F9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		FF5E17DD1BE99052009B0F9E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		FF5E17DF1BE9905F009B0F9E /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
+		FF5E17E01BE9905F009B0F9E /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		FF5E17E21BE99068009B0F9E /* SocialWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialWorker.h; sourceTree = "<group>"; };
+		FF5E17E31BE99068009B0F9E /* SocialWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialWorker.m; sourceTree = "<group>"; };
+		FF5E17E51BE99074009B0F9E /* Consultation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consultation.h; sourceTree = "<group>"; };
+		FF5E17E61BE99074009B0F9E /* Consultation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consultation.m; sourceTree = "<group>"; };
+		FF5E17E81BE9907D009B0F9E /* StatusReport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusReport.h; sourceTree = "<group>"; };
+		FF5E17E91BE9907D009B0F9E /* StatusReport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusReport.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,8 +179,11 @@
 				CAA982801BE8589300137E45 /* Controllers */,
 				2B3B71AC1BC6EB9F001D766D /* AppDelegate.h */,
 				2B3B71AD1BC6EB9F001D766D /* AppDelegate.m */,
+				FF5E17ED1BE990CB009B0F9E /* ViewControllers */,
+				FF5E17EC1BE990C3009B0F9E /* Images */,
 				2B3B71B51BC6EB9F001D766D /* Assets.xcassets */,
 				2B3B71B21BC6EB9F001D766D /* Main.storyboard */,
+				FF5E17EB1BE990B5009B0F9E /* Models */,
 				2B3B71B71BC6EB9F001D766D /* LaunchScreen.storyboard */,
 				2B3B71BA1BC6EB9F001D766D /* Info.plist */,
 				CAA9827F1BE8574100137E45 /* Images */,
@@ -200,6 +218,7 @@
 			path = MAMICareUITests;
 			sourceTree = "<group>";
 		};
+
 		CA0CF0B31BE99075006875F7 /* Custom Tableview Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +228,25 @@
 			name = "Custom Tableview Cell";
 			sourceTree = "<group>";
 		};
+
+        FF5E17EB1BE990B5009B0F9E /* Models */ = {
+            isa = PBXGroup;
+            children = (
+            FF5E17DC1BE99052009B0F9E /* User.h */,
+            FF5E17DD1BE99052009B0F9E /* User.m */,
+            FF5E17DF1BE9905F009B0F9E /* Patient.h */,
+            FF5E17E01BE9905F009B0F9E /* Patient.m */,
+            FF5E17E21BE99068009B0F9E /* SocialWorker.h */,
+            FF5E17E31BE99068009B0F9E /* SocialWorker.m */,
+            FF5E17E51BE99074009B0F9E /* Consultation.h */,
+            FF5E17E61BE99074009B0F9E /* Consultation.m */,
+            FF5E17E81BE9907D009B0F9E /* StatusReport.h */,
+            FF5E17E91BE9907D009B0F9E /* StatusReport.m */,
+            );
+            name = Models;
+            sourceTree = "<group>";
+        };
+
 		CAA9827F1BE8574100137E45 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +273,8 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		CAA982801BE8589300137E45 /* Controllers */ = {
+
+		FF5E17ED1BE990CB009B0F9E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */,
@@ -253,7 +292,8 @@
 				2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */,
 				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
 			);
-			name = Controllers;
+
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,13 +451,18 @@
 				2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */,
 				CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */,
 				2BF5131A1BC78169002B790B /* ViewControllerPacientes.m in Sources */,
+				FF5E17DE1BE99052009B0F9E /* User.m in Sources */,
 				2B3B71B11BC6EB9F001D766D /* ViewController.m in Sources */,
 				CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */,
 				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
 				2B3B71AE1BC6EB9F001D766D /* AppDelegate.m in Sources */,
+				FF5E17E41BE99068009B0F9E /* SocialWorker.m in Sources */,
 				2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */,
+				FF5E17EA1BE9907D009B0F9E /* StatusReport.m in Sources */,
+				FF5E17E11BE9905F009B0F9E /* Patient.m in Sources */,
 				2BF5131D1BC7817A002B790B /* ViewControllerConsultar.m in Sources */,
 				2B3B71AB1BC6EB9F001D766D /* main.m in Sources */,
+				FF5E17E71BE99074009B0F9E /* Consultation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
