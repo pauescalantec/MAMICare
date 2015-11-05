@@ -176,11 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				CA0CF0B31BE99075006875F7 /* Custom Tableview Cell */,
-				CAA982801BE8589300137E45 /* Controllers */,
 				2B3B71AC1BC6EB9F001D766D /* AppDelegate.h */,
 				2B3B71AD1BC6EB9F001D766D /* AppDelegate.m */,
 				FF5E17ED1BE990CB009B0F9E /* ViewControllers */,
-				FF5E17EC1BE990C3009B0F9E /* Images */,
 				2B3B71B51BC6EB9F001D766D /* Assets.xcassets */,
 				2B3B71B21BC6EB9F001D766D /* Main.storyboard */,
 				FF5E17EB1BE990B5009B0F9E /* Models */,
@@ -218,7 +216,6 @@
 			path = MAMICareUITests;
 			sourceTree = "<group>";
 		};
-
 		CA0CF0B31BE99075006875F7 /* Custom Tableview Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,25 +225,6 @@
 			name = "Custom Tableview Cell";
 			sourceTree = "<group>";
 		};
-
-        FF5E17EB1BE990B5009B0F9E /* Models */ = {
-            isa = PBXGroup;
-            children = (
-            FF5E17DC1BE99052009B0F9E /* User.h */,
-            FF5E17DD1BE99052009B0F9E /* User.m */,
-            FF5E17DF1BE9905F009B0F9E /* Patient.h */,
-            FF5E17E01BE9905F009B0F9E /* Patient.m */,
-            FF5E17E21BE99068009B0F9E /* SocialWorker.h */,
-            FF5E17E31BE99068009B0F9E /* SocialWorker.m */,
-            FF5E17E51BE99074009B0F9E /* Consultation.h */,
-            FF5E17E61BE99074009B0F9E /* Consultation.m */,
-            FF5E17E81BE9907D009B0F9E /* StatusReport.h */,
-            FF5E17E91BE9907D009B0F9E /* StatusReport.m */,
-            );
-            name = Models;
-            sourceTree = "<group>";
-        };
-
 		CAA9827F1BE8574100137E45 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,8 +251,24 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-
-		FF5E17ED1BE990CB009B0F9E /* View Controllers */ = {
+		FF5E17EB1BE990B5009B0F9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF5E17DC1BE99052009B0F9E /* User.h */,
+				FF5E17DD1BE99052009B0F9E /* User.m */,
+				FF5E17DF1BE9905F009B0F9E /* Patient.h */,
+				FF5E17E01BE9905F009B0F9E /* Patient.m */,
+				FF5E17E21BE99068009B0F9E /* SocialWorker.h */,
+				FF5E17E31BE99068009B0F9E /* SocialWorker.m */,
+				FF5E17E51BE99074009B0F9E /* Consultation.h */,
+				FF5E17E61BE99074009B0F9E /* Consultation.m */,
+				FF5E17E81BE9907D009B0F9E /* StatusReport.h */,
+				FF5E17E91BE9907D009B0F9E /* StatusReport.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FF5E17ED1BE990CB009B0F9E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */,
@@ -292,7 +286,6 @@
 				2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */,
 				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
 			);
-
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};

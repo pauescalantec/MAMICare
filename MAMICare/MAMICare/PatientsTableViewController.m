@@ -7,6 +7,8 @@
 //
 
 #import "PatientsTableViewController.h"
+#import "PatientTableViewCell.h"
+#import "Patient.h"
 
 @interface PatientsTableViewController ()
 
@@ -19,7 +21,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+        Patient *testPatient[5];
+        testPatient[0] = [[Patient alloc] initWithPid: 1 name:@"Natalia" lastName:@"Garcia" oid:1 age:21 street:@"Villa Chipinque" streetNumber:318 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:1 status:@"Bueno" community:@"Caracol" photo:[UIImage imageNamed:@"w1.png"]];
+        
+        testPatient[1] = [[Patient alloc] initWithPid: 1 name:@"Paulina" lastName:@"Escalante" oid:2 age:21 street:@"Jeronimo Siller" streetNumber:207 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:2 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w2.png"]];
+        
+        testPatient[2] = [[Patient alloc] initWithPid: 1 name:@"Juno" lastName:@"Carrera" oid:1 age:21 street:@"Paseo Junquera" streetNumber:93 municipality:@"Catí" city:@"Catí" state:@"Puebla" createdAt: [[NSDate alloc]init] babiesDelivered:0 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w3.png"]];
+        
+        testPatient[3] = [[Patient alloc] initWithPid: 1 name:@"Obdulia" lastName:@"Rosado Candelaria" oid:1 age:21 street:@"Herrería" streetNumber:91 municipality:@"Monachil" city:@"Monachil" state:@"Yucatán" createdAt: [[NSDate alloc]init] babiesDelivered:5 status:@"Malo" community:@"Caracol" photo:[UIImage imageNamed:@"w4.png"]];
+        
+        self.patients = [NSMutableArray arrayWithObjects:testPatient[0], testPatient[1], testPatient[2], testPatient[3], testPatient[4], nil];
+        
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,17 +65,20 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     #warning Incomplete implementation, return the number of rows
-    return 0;
+        return self.patients.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
-    
-    #warning We're missing the patient class implementation
-    // Configure the cell...
-    
-    return cell;
+        PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+        Patient *patient = self.patients[indexPath.row];
+        [self configureCell:cell forPatient:patient];
+        return cell;
+}
+- (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
+# warning Implement configureCell method
+        cell.lblPatientName.text = patient.getFullName;
+        cell.imgPatientImage.image = patient.photo;
 }
 
 

@@ -22,4 +22,14 @@
 
 -(NSString*) getFullName;
 -(NSString*) getFullAddress;
+-(id) initWithName: (NSString *) name
+        lastName: (NSString *) last
+        oid: (NSUInteger) oid
+        age: (NSInteger) age
+        street: (NSString *) st
+        streetNumber: (NSInteger) stNum
+        municipality: (NSString *) mun
+        city: (NSString *) city
+        state: (NSString *) state
+        createdAt: (NSDate *) createdAt;
 @end
