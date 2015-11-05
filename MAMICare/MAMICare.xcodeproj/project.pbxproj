@@ -41,11 +41,13 @@
 		2BF513271BC78775002B790B /* back.ico in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513261BC78775002B790B /* back.ico */; };
 		CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */; };
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
-		FF5E17DE1BE99052009B0F9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17DD1BE99052009B0F9E /* User.m */; settings = {ASSET_TAGS = (); }; };
-		FF5E17E11BE9905F009B0F9E /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E01BE9905F009B0F9E /* Patient.m */; settings = {ASSET_TAGS = (); }; };
-		FF5E17E41BE99068009B0F9E /* SocialWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E31BE99068009B0F9E /* SocialWorker.m */; settings = {ASSET_TAGS = (); }; };
-		FF5E17E71BE99074009B0F9E /* Consultation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E61BE99074009B0F9E /* Consultation.m */; settings = {ASSET_TAGS = (); }; };
-		FF5E17EA1BE9907D009B0F9E /* StatusReport.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E91BE9907D009B0F9E /* StatusReport.m */; settings = {ASSET_TAGS = (); }; };
+		CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35451BEBD6F600471AED /* ResultsTableController.m */; };
+		CABC35491BEBDC7200471AED /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35481BEBDC7200471AED /* DetailViewController.m */; };
+		FF5E17DE1BE99052009B0F9E /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17DD1BE99052009B0F9E /* User.m */; };
+		FF5E17E11BE9905F009B0F9E /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E01BE9905F009B0F9E /* Patient.m */; };
+		FF5E17E41BE99068009B0F9E /* SocialWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E31BE99068009B0F9E /* SocialWorker.m */; };
+		FF5E17E71BE99074009B0F9E /* Consultation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E61BE99074009B0F9E /* Consultation.m */; };
+		FF5E17EA1BE9907D009B0F9E /* StatusReport.m in Sources */ = {isa = PBXBuildFile; fileRef = FF5E17E91BE9907D009B0F9E /* StatusReport.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,10 @@
 		CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
 		CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsTableViewController.h; sourceTree = "<group>"; };
 		CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsTableViewController.m; sourceTree = "<group>"; };
+		CABC35441BEBD6F600471AED /* ResultsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableController.h; sourceTree = "<group>"; };
+		CABC35451BEBD6F600471AED /* ResultsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableController.m; sourceTree = "<group>"; };
+		CABC35471BEBDC7200471AED /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		CABC35481BEBDC7200471AED /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FF5E17DC1BE99052009B0F9E /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		FF5E17DD1BE99052009B0F9E /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FF5E17DF1BE9905F009B0F9E /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
@@ -271,6 +277,27 @@
 		FF5E17ED1BE990CB009B0F9E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF5E17DC1BE99052009B0F9E /* User.h */,
+				FF5E17DD1BE99052009B0F9E /* User.m */,
+				FF5E17DF1BE9905F009B0F9E /* Patient.h */,
+				FF5E17E01BE9905F009B0F9E /* Patient.m */,
+				FF5E17E21BE99068009B0F9E /* SocialWorker.h */,
+				FF5E17E31BE99068009B0F9E /* SocialWorker.m */,
+				FF5E17E51BE99074009B0F9E /* Consultation.h */,
+				FF5E17E61BE99074009B0F9E /* Consultation.m */,
+				FF5E17E81BE9907D009B0F9E /* StatusReport.h */,
+				FF5E17E91BE9907D009B0F9E /* StatusReport.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		FF5E17ED1BE990CB009B0F9E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CABC35471BEBDC7200471AED /* DetailViewController.h */,
+				CABC35481BEBDC7200471AED /* DetailViewController.m */,
+				CABC35441BEBD6F600471AED /* ResultsTableController.h */,
+				CABC35451BEBD6F600471AED /* ResultsTableController.m */,
 				CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */,
 				CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */,
 				2B3B71AF1BC6EB9F001D766D /* ViewController.h */,
@@ -442,6 +469,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */,
+				CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */,
+				CABC35491BEBDC7200471AED /* DetailViewController.m in Sources */,
 				CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */,
 				2BF5131A1BC78169002B790B /* ViewControllerPacientes.m in Sources */,
 				FF5E17DE1BE99052009B0F9E /* User.m in Sources */,
