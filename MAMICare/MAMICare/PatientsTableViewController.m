@@ -128,7 +128,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
     
-    Patient *patient = self.filteredPatients[indexPath.row];
+    Patient *patient = self.patients[indexPath.row];
     [self configureCell:cell forPatient:patient];
     
     return cell;
