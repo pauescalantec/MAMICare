@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerNuevoPaciente : UIViewController
+<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 - (IBAction)botNuevaFoto:(id)sender;
 

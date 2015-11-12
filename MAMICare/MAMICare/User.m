@@ -9,6 +9,24 @@
 #import "User.h"
 
 @implementation User
+
+- (id) initWithName:(NSString *)name lastName:(NSString *)last oid:(NSUInteger)oid age:(NSInteger)age street:(NSString *)st streetNumber:(NSInteger)stNum municipality:(NSString *)mun city:(NSString *)city state:(NSString *)state createdAt:(NSDate *)createdAt {
+        self = [super init];
+        if (self) {
+                _firstName = name;
+                _lastName = last;
+                _oid = oid;
+                _age = age;
+                _street = st;
+                _streetNumber = stNum;
+                _municipality = mun;
+                _city = city;
+                _state = state;
+                _createdAt = createdAt;
+        }
+        return self;
+}
+
 - (NSString*) getFullName {
         NSString *format = @"%@ %@";
         NSString *fullName = [NSString stringWithFormat: format, self.firstName, self.lastName];
