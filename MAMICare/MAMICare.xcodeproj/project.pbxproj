@@ -156,37 +156,8 @@
 			children = (
 				2B3B71AC1BC6EB9F001D766D /* AppDelegate.h */,
 				2B3B71AD1BC6EB9F001D766D /* AppDelegate.m */,
-				2B3B71AF1BC6EB9F001D766D /* ViewController.h */,
-				2B3B71B01BC6EB9F001D766D /* ViewController.m */,
-				2BF513001BC752EB002B790B /* ViewControllerLogin.h */,
-				2BF513011BC752EB002B790B /* ViewControllerLogin.m */,
-				2BF513051BC771A2002B790B /* ViewControllerDashboard.h */,
-				2BF513061BC771A2002B790B /* ViewControllerDashboard.m */,
-				2BF513181BC78169002B790B /* ViewControllerPacientes.h */,
-				2BF513191BC78169002B790B /* ViewControllerPacientes.m */,
-				2BF5131B1BC7817A002B790B /* ViewControllerConsultar.h */,
-				2BF5131C1BC7817A002B790B /* ViewControllerConsultar.m */,
-				2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */,
-				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
-				2BF512FE1BC750F2002B790B /* Background.jpg */,
-				2BF513031BC76249002B790B /* line.png */,
-				2BF513161BC780ED002B790B /* settings.png */,
-				2BF513081BC77A63002B790B /* w1.png */,
-				2BF513091BC77A63002B790B /* w2.png */,
-				2BF5130A1BC77A63002B790B /* w3.png */,
-				2BF5130B1BC77A63002B790B /* w4.png */,
-				2BF513101BC77D42002B790B /* c1.png */,
-				2BF513111BC77D42002B790B /* c2.png */,
-				2BF513121BC77D42002B790B /* c3.png */,
-				2BF5131E1BC78404002B790B /* baby.png */,
-				2BF513261BC78775002B790B /* back.ico */,
-				2BF513201BC784AA002B790B /* house.png */,
-				2BF513221BC784F6002B790B /* orangeDot.png */,
-				2BF513231BC784F6002B790B /* blueDot.png */,
-				2BD4F1291BCF62E5007A50C0 /* newContact.png */,
-				2BD4F12B1BCF6721007A50C0 /* searchBar.png */,
-				2BD4F12D1BCF67C2007A50C0 /* camera.png */,
-				2BD4F12F1BCF6A1C007A50C0 /* refresh.png */,
+				FFABFB651BFB9B7A008098B9 /* ViewControllers */,
+				FFABFB661BFB9B89008098B9 /* Images */,
 				2B3B71B51BC6EB9F001D766D /* Assets.xcassets */,
 				2B3B71B21BC6EB9F001D766D /* Main.storyboard */,
 				2B3B71B71BC6EB9F001D766D /* LaunchScreen.storyboard */,
@@ -220,6 +191,51 @@
 				2B3B71D01BC6EBA0001D766D /* Info.plist */,
 			);
 			path = MAMICareUITests;
+			sourceTree = "<group>";
+		};
+		FFABFB651BFB9B7A008098B9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B3B71AF1BC6EB9F001D766D /* ViewController.h */,
+				2B3B71B01BC6EB9F001D766D /* ViewController.m */,
+				2BF513001BC752EB002B790B /* ViewControllerLogin.h */,
+				2BF513011BC752EB002B790B /* ViewControllerLogin.m */,
+				2BF513051BC771A2002B790B /* ViewControllerDashboard.h */,
+				2BF513061BC771A2002B790B /* ViewControllerDashboard.m */,
+				2BF513181BC78169002B790B /* ViewControllerPacientes.h */,
+				2BF513191BC78169002B790B /* ViewControllerPacientes.m */,
+				2BF5131B1BC7817A002B790B /* ViewControllerConsultar.h */,
+				2BF5131C1BC7817A002B790B /* ViewControllerConsultar.m */,
+				2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */,
+				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FFABFB661BFB9B89008098B9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2BF512FE1BC750F2002B790B /* Background.jpg */,
+				2BF513031BC76249002B790B /* line.png */,
+				2BF513161BC780ED002B790B /* settings.png */,
+				2BF513081BC77A63002B790B /* w1.png */,
+				2BF513091BC77A63002B790B /* w2.png */,
+				2BF5130A1BC77A63002B790B /* w3.png */,
+				2BF5130B1BC77A63002B790B /* w4.png */,
+				2BF513101BC77D42002B790B /* c1.png */,
+				2BF513111BC77D42002B790B /* c2.png */,
+				2BF513121BC77D42002B790B /* c3.png */,
+				2BF5131E1BC78404002B790B /* baby.png */,
+				2BF513261BC78775002B790B /* back.ico */,
+				2BF513201BC784AA002B790B /* house.png */,
+				2BF513221BC784F6002B790B /* orangeDot.png */,
+				2BF513231BC784F6002B790B /* blueDot.png */,
+				2BD4F1291BCF62E5007A50C0 /* newContact.png */,
+				2BD4F12B1BCF6721007A50C0 /* searchBar.png */,
+				2BD4F12D1BCF67C2007A50C0 /* camera.png */,
+				2BD4F12F1BCF6A1C007A50C0 /* refresh.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
