@@ -13,5 +13,6 @@
 // outlets
 @property (weak, nonatomic) IBOutlet UISearchBar *sbPatientSearchBar;
 
+@property (nonatomic, strong) NSString *strSegue;
 
 @end

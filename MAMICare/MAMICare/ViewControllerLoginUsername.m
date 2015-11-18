@@ -1,18 +1,19 @@
 //
-//  ViewControllerLogin.m
+//  ViewControllerLoginUsername.m
 //  MAMICare
 //
-//  Created by Pau Escalante on 10/8/15.
+//  Created by Pau Escalante on 11/13/15.
 //  Copyright © 2015 Paulina´s. All rights reserved.
 //
 
+#import "ViewControllerLoginUsername.h"
 #import "ViewControllerLogin.h"
 
-@interface ViewControllerLogin ()
+@interface ViewControllerLoginUsername ()
 
 @end
 
-@implementation ViewControllerLogin
+@implementation ViewControllerLoginUsername
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -20,22 +21,18 @@
     
     //button formatting
     self.outBtnNext.layer.cornerRadius = 5;
-    self.outShadow.layer.cornerRadius = 5;
     self.outShadow.layer.masksToBounds = YES;
+    self.outShadow.layer.cornerRadius = 5;
     
     //Back box formatting
-    self.outBackBox.layer.cornerRadius = 5;
     self.outBackBox.layer.masksToBounds = YES;
+    self.outBackBox.layer.cornerRadius = 5;
     self.labWarning.hidden = YES;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(removeKb)];
     
     [self.view addGestureRecognizer:tap];
     [self registerForKeyboardNotifications];
-    
-    //set user
-    self.txtUser.text = self.strUser;
-    self.outPassword.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,66 +40,52 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //send username to next view controller
+    if ([[segue identifier] isEqualToString: @"login"]) {
+        ViewControllerLogin *viewLogin = [segue destinationViewController];
+        viewLogin.strUser = self.txtUser.text;
+    }
 }
-*/
 
 //validate segue if user has not entered username
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    //local variables
-    BOOL missing = NO;
-    
     if ([identifier isEqualToString:@"login"])  {
-        //missing username
         if ([self.txtUser.text isEqualToString:@"Usuario"]){
-            self.labWarning.text = @"Escribe usuario antes de seguir.";
-            missing = YES;
-        }
-        
-        //missing password
-        else if ([self.txtPassword.text isEqualToString:@""]){
-            self.labWarning.text = @"Escribe contraseña antes de seguir.";
-            missing = YES;
-        }
-        
-        //missing password
-        if ([self.txtPassword.text isEqualToString:@""] && [self.txtUser.text isEqualToString:@"Usuario"]){
-            self.labWarning.text = @"Escribe usuario y contraseña antes de seguir.";
-            missing = YES;
-        }
-        
-        if (missing){
-            //show warning
             self.labWarning.hidden = NO;
             return NO;
         }
         return YES;
     }
-    
     else {
         return YES;
     }
 }
 
+// Editing User TF
 - (IBAction)actEditing:(UITextField *)sender {
     self.activeField = sender;
     //check if there is previous user input
-    if ([self.txtPassword.text isEqualToString:@""]){
-        self.outPassword.hidden = YES;
+    if ([self.txtUser.text isEqualToString:@"Usuario"]){
+        //empty text
+        self.txtUser.text = @"";
+        //turn to color black
+        self.txtUser.textColor = [UIColor blackColor];
     }
 }
 
+// Editing User TF
 - (IBAction)actFinishEdit:(UITextField *)sender {
     self.activeField = nil;
     //check length of text for format
-    if (self.txtPassword.text.length <= 0){
-        self.outPassword.hidden = NO;
+    if (self.txtUser.text.length <= 0){
+        //change text
+        self.txtUser.text = @"Usuario";
+        //turn to color black
+        self.txtUser.textColor = [UIColor colorWithRed:(191/255.0f) green:(190/255.0f) blue:(192/255.0f) alpha:1];
     }
 }
 
@@ -146,25 +129,4 @@
     [self.outScroller setContentOffset:CGPointMake(0.0, 0.0) animated:YES];
 }
 
-- (IBAction)actEditingUser:(UITextField *)sender {
-    self.activeField = sender;
-    //check if there is previous user input
-    if ([self.txtUser.text isEqualToString:@"Usuario"]){
-        //empty text
-        self.txtUser.text = @"";
-        //turn to color black
-        self.txtUser.textColor = [UIColor blackColor];
-    }
-}
-
-- (IBAction)actFinishEditUser:(UITextField *)sender {
-    self.activeField = nil;
-    //check length of text for format
-    if (self.txtUser.text.length <= 0){
-        //change text
-        self.txtUser.text = @"Usuario";
-        //turn to color black
-        self.txtUser.textColor = [UIColor colorWithRed:(191/255.0f) green:(190/255.0f) blue:(192/255.0f) alpha:1];
-    }
-}
 @end

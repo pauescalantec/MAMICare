@@ -9,14 +9,16 @@
 #import "PatientsTableViewController.h"
 #import "PatientTableViewCell.h"
 #import "Patient.h"
-#import "DetailViewController.h"
+#import "ViewControllerDetalle.h"
+#import "ViewControllerNuevoPaciente.h"
 #import "ResultsTableController.h"
 
 @interface PatientsTableViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
 
-
 @property (nonatomic, strong) NSMutableArray *patients;
+
 @property (nonatomic, strong) NSArray *filteredPatients;
+
 @property BOOL searchActive;
 
 @property (nonatomic, strong) UISearchController *searchController;
@@ -35,11 +37,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         Patient *testPatient[5];
-        testPatient[0] = [[Patient alloc] initWithPid: 1 name:@"Natalia" lastName:@"Garcia" oid:1 age:21 street:@"Villa Chipinque" streetNumber:318 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:1 status:@"Bueno" community:@"Caracol" photo:[UIImage imageNamed:@"w1.png"]];
+        testPatient[0] = [[Patient alloc] initWithPid: 1 name:@"Natalia" lastName:@"Garcia Torres" oid:1 age:21 street:@"Villa Chipinque" streetNumber:318 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:1 status:@"Bueno" community:@"Caracol" photo:[UIImage imageNamed:@"w1.png"]];
         
-        testPatient[1] = [[Patient alloc] initWithPid: 1 name:@"Paulina" lastName:@"Escalante" oid:2 age:21 street:@"Jeronimo Siller" streetNumber:207 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:2 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w2.png"]];
+        testPatient[1] = [[Patient alloc] initWithPid: 1 name:@"Paulina" lastName:@"Escalante Campbell" oid:2 age:21 street:@"Jeronimo Siller" streetNumber:207 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:2 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w2.png"]];
         
-        testPatient[2] = [[Patient alloc] initWithPid: 1 name:@"Juno" lastName:@"Carrera" oid:1 age:21 street:@"Paseo Junquera" streetNumber:93 municipality:@"Catí" city:@"Catí" state:@"Puebla" createdAt: [[NSDate alloc]init] babiesDelivered:0 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w3.png"]];
+        testPatient[2] = [[Patient alloc] initWithPid: 1 name:@"Juno" lastName:@"Carrera Rodriguez" oid:1 age:21 street:@"Paseo Junquera" streetNumber:93 municipality:@"Catí" city:@"Catí" state:@"Puebla" createdAt: [[NSDate alloc]init] babiesDelivered:0 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w3.png"]];
         
         testPatient[3] = [[Patient alloc] initWithPid: 1 name:@"Obdulia" lastName:@"Rosado Candelaria" oid:1 age:21 street:@"Herrería" streetNumber:91 municipality:@"Monachil" city:@"Monachil" state:@"Yucatán" createdAt: [[NSDate alloc]init] babiesDelivered:5 status:@"Malo" community:@"Caracol" photo:[UIImage imageNamed:@"w4.png"]];
         
@@ -148,15 +150,15 @@
         cell.imgPatientImage.image = patient.photo;
 }
 
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Patient *selectedPatient = (tableView == self.tableView) ?
-        self.patients[indexPath.row] : self.resultsTableController.filteredPatients[indexPath.row];
-    DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    detailViewController.patient = selectedPatient; // hand off the current product to the detail view controller
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    Patient *selectedPatient = (tableView == self.tableView) ?
+//        self.patients[indexPath.row] : self.resultsTableController.filteredPatients[indexPath.row];
+//    ViewControllerDetalle *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+//    detailViewController.patient = selectedPatient; // hand off the current product to the detail view controller
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//}
 
 #pragma mark - UISearchResultsUpdating
 
@@ -230,13 +232,24 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     self.searchController.searchBar.text = [coder decodeObjectForKey:SearchBarTextKey];
 }
 
-
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    //detail view controller
+    
+    if ([[segue identifier] isEqualToString: @"detallePaciente"]) {
+        ViewControllerDetalle *viewPacientes= [segue destinationViewController];
+        viewPacientes.strSegue = self.strSegue;
+    }
+    
+    if ([[segue identifier] isEqualToString: @"agregaPaciente"]) {
+        ViewControllerNuevoPaciente *agregaPacientes= [segue destinationViewController];
+        agregaPacientes.strSegue = self.strSegue;
+    }
+    
 }
 
 @end
