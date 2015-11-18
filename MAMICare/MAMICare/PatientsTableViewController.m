@@ -81,6 +81,50 @@
     
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.patients.count;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+    Patient *patient = self.patients[indexPath.row];
+    [self configureCell:cell forPatient:patient];
+    return cell;
+}
+
+- (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
+# warning Implement configureCell method
+    cell.lblPatientName.text = patient.getFullName;
+    cell.imgPatientImage.image = patient.photo;
+}
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    Patient *selectedPatient = (tableView == self.tableView) ?
+//        self.patients[indexPath.row] : self.resultsTableController.filteredPatients[indexPath.row];
+//    DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+//    detailViewController.patient = selectedPatient; // hand off the current product to the detail view controller
+//    [self.navigationController pushViewController:detailViewController animated:YES];
+//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+//}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    Patient *patient = [self.patients objectAtIndex:indexPath.row];
+    [[segue destinationViewController] setPatient:patient];
+}
+
+//##############################################################################
+//####################### UNFINISHED METHODS BELOW #############################
+//##############################################################################
+
 #pragma mark - UISearchBarDelegate
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
@@ -124,40 +168,6 @@
 //    [self filterPatients:searchString scope:[scopes objectAtIndex:index]];
 //    return YES;
 //}
-
-
-#pragma mark - Table view data source
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.patients.count;
-}
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
-    Patient *patient = self.patients[indexPath.row];
-    [self configureCell:cell forPatient:patient];
-    return cell;
-}
-
-- (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
-# warning Implement configureCell method
-    cell.lblPatientName.text = patient.getFullName;
-    cell.imgPatientImage.image = patient.photo;
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Patient *selectedPatient = (tableView == self.tableView) ?
-        self.patients[indexPath.row] : self.resultsTableController.filteredPatients[indexPath.row];
-    DetailViewController *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-    detailViewController.patient = selectedPatient; // hand off the current product to the detail view controller
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-}
 
 #pragma mark - UISearchResultsUpdating
 
@@ -229,15 +239,6 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     
     // restore the text in the search field
     self.searchController.searchBar.text = [coder decodeObjectForKey:SearchBarTextKey];
-}
-
-
-
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 @end

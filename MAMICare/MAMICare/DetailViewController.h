@@ -11,6 +11,14 @@
 
 @interface DetailViewController : UIViewController
 
+// detail Items
 @property (nonatomic, strong) Patient *patient;
+
+// outlets
+@property (weak, nonatomic) IBOutlet UIImageView *imgPatientImage;
+@property (weak, nonatomic) IBOutlet UILabel *lblPatientName;
+
+//actions
+
 
 @end

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P74-Pe-7k8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="P74-Pe-7k8">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -696,6 +696,7 @@
                                     <outletCollection property="lblVisitsCollection" destination="trd-5I-JwK" id="w7h-6t-UfU"/>
                                     <outletCollection property="lblVisitsCollection" destination="rUa-mh-nmd" id="V2o-A0-Ene"/>
                                     <outletCollection property="lblVisitsCollection" destination="pjT-Yg-ViF" id="oFu-vt-XEQ"/>
+                                    <segue destination="f6E-Qf-a05" kind="show" id="SQ6-l0-B1B"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -721,7 +722,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3641" y="-854"/>
+            <point key="canvasLocation" x="4273" y="-854"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZZa-bZ-1u2">
@@ -740,7 +741,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q45-fQ-XhE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2475" y="-854"/>
+            <point key="canvasLocation" x="3107" y="-854"/>
         </scene>
         <!--Title-->
         <scene sceneID="V0F-Mv-aiG">
@@ -1378,10 +1379,31 @@
             </objects>
             <point key="canvasLocation" x="4815" y="435"/>
         </scene>
-        <!--Title-->
+        <!--View Controller-->
+        <scene sceneID="3JI-ev-uvk">
+            <objects>
+                <viewController id="gWL-Xb-qlh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8p0-Ej-ytC"/>
+                        <viewControllerLayoutGuide type="bottom" id="0fG-lZ-6KB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="STs-Xa-6Cd">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxj-W6-P8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7153" y="435"/>
+        </scene>
+        <!--Vista Paciente-->
         <scene sceneID="cbE-cp-QIc">
             <objects>
-                <viewController id="f6E-Qf-a05" customClass="ViewControllerPacientes" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="f6E-Qf-a05" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e98-mw-IIY"/>
                         <viewControllerLayoutGuide type="bottom" id="AHg-hO-fSU"/>
@@ -1414,7 +1436,7 @@
                                 <rect key="frame" x="314" y="227" width="12" height="11"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="            Elizabeth Marcos Campbell " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmN-f3-7T7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmN-f3-7T7">
                                 <rect key="frame" x="115" y="103" width="914" height="63"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.63352272730000003" green="0.63352272730000003" blue="0.63352272730000003" alpha="0.63" colorSpace="calibratedRGB"/>
@@ -1422,10 +1444,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="w4.png" translatesAutoresizingMaskIntoConstraints="NO" id="P7w-hK-HJM">
-                                <rect key="frame" x="45" y="100" width="151" height="156"/>
-                                <animations/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="baby.png" translatesAutoresizingMaskIntoConstraints="NO" id="xvm-rd-e3r">
                                 <rect key="frame" x="209" y="174" width="30" height="34"/>
                                 <animations/>
@@ -1494,10 +1512,6 @@
                                 <rect key="frame" x="202" y="790" width="24" height="26"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBa-HX-OiG">
-                                <rect key="frame" x="45" y="103" width="151" height="150"/>
-                                <animations/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0L-4I-0CP">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="20"/>
                                 <animations/>
@@ -1539,10 +1553,18 @@
                                 <state key="normal" title="Comenzar consulta">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="NIb-q6-Quy" kind="show" id="dwe-xS-w1M"/>
-                                </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="w1.png" translatesAutoresizingMaskIntoConstraints="NO" id="XFg-21-py2">
+                                <rect key="frame" x="38" y="103" width="150" height="150"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Patient's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4k2-Gx-TEo">
+                                <rect key="frame" x="212" y="117" width="505" height="37"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1552,9 +1574,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="wxi-JW-f5y"/>
+                    <navigationItem key="navigationItem" title="Vista Paciente" id="wxi-JW-f5y"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="imgPatientImage" destination="XFg-21-py2" id="Hza-T9-ey4"/>
+                        <outlet property="lblPatientName" destination="4k2-Gx-TEo" id="U30-5G-Tx7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Sy-WA-rIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1728,7 +1754,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6u-4v-w7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7009" y="443"/>
+            <point key="canvasLocation" x="5921" y="1435"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oGF-en-Atz">
+            <objects>
+                <viewController id="Wx0-8N-gzq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kNj-jm-7UA"/>
+                        <viewControllerLayoutGuide type="bottom" id="xmE-jX-GTR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8vP-XY-TKV">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wjc-H2-tcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8433" y="435"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wlh-xx-UBr">
+            <objects>
+                <viewController id="6V9-fT-5SN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="snC-pH-BA4"/>
+                        <viewControllerLayoutGuide type="bottom" id="In0-0n-2NM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J4M-Mk-MXx">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kir-uS-cq2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10945" y="435"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JmH-dp-9ZA">
+            <objects>
+                <viewController id="Uyk-cL-6PD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FDN-qa-EZQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="6JW-bf-shB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tYd-SK-L9s">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKw-ZX-Fdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9689" y="435"/>
         </scene>
     </scenes>
     <resources>
