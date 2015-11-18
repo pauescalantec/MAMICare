@@ -46,7 +46,6 @@
         testPatient[3] = [[Patient alloc] initWithPid: 1 name:@"Obdulia" lastName:@"Rosado Candelaria" oid:1 age:21 street:@"Herrería" streetNumber:91 municipality:@"Monachil" city:@"Monachil" state:@"Yucatán" createdAt: [[NSDate alloc]init] babiesDelivered:5 status:@"Malo" community:@"Caracol" photo:[UIImage imageNamed:@"w4.png"]];
         
         self.patients = [NSMutableArray arrayWithObjects:testPatient[0], testPatient[1], testPatient[2], testPatient[3], testPatient[4], nil];
-        
 
     _resultsTableController = [[ResultsTableController alloc] init];
     _searchController = [[UISearchController alloc]
@@ -139,15 +138,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
-        Patient *patient = self.patients[indexPath.row];
-        [self configureCell:cell forPatient:patient];
-        return cell;
+    PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
+    Patient *patient = self.patients[indexPath.row];
+    [self configureCell:cell forPatient:patient];
+    return cell;
 }
+
 - (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
 # warning Implement configureCell method
-        cell.lblPatientName.text = patient.getFullName;
-        cell.imgPatientImage.image = patient.photo;
+    cell.lblPatientName.text = patient.getFullName;
+    cell.imgPatientImage.image = patient.photo;
 }
 
 //
