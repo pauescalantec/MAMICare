@@ -25,5 +25,4 @@ xcuserdata
 *.moved-aside
 *.xcuserstate
 
-# careful:
-MAMICare/MAMICare/Base.lproj/Main.storyboard
+*.storyboard
