@@ -10,6 +10,9 @@
 
 @implementation Assessment
 
+<<<<<<< HEAD
+@end
+=======
 - (id)init {
     self = [super init];
     if (self) {
@@ -65,3 +68,4 @@
 
 @end
 
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd

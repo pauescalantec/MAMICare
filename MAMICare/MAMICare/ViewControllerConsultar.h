@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewControllerConsultar : UIViewController
+
 @property (weak, nonatomic) IBOutlet UIButton *botExistente;
 
 @property (weak, nonatomic) IBOutlet UIButton *botNuevo;

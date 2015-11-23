@@ -10,6 +10,34 @@
 
 @interface ViewControllerLogin : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton *botIniciarSesion;
+@property (nonatomic, strong) NSString *strUser;
+
+@property (nonatomic, strong) NSString *strPassword;
+
+@property (strong, nonatomic) IBOutlet UITextField *txtUser;
+
+@property (strong, nonatomic) IBOutlet UITextField *txtPassword;
+
+@property (strong, nonatomic) IBOutlet UIButton *outBtnNext;
+
+@property (strong, nonatomic) IBOutlet UILabel *outShadow;
+
+@property (strong, nonatomic) IBOutlet UILabel *outBackBox;
+
+- (IBAction)actEditing:(UITextField *)sender;
+
+- (IBAction)actFinishEdit:(UITextField *)sender;
+
+@property (nonatomic, strong) UITextField *activeField;
+
+@property (strong, nonatomic) IBOutlet UIScrollView *outScroller;
+
+- (IBAction)actEditingUser:(UITextField *)sender;
+
+- (IBAction)actFinishEditUser:(UITextField *)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *outPassword;
+
+@property (strong, nonatomic) IBOutlet UILabel *labWarning;
 
 @end

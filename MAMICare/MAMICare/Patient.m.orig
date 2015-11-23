@@ -10,7 +10,11 @@
 
 @implementation Patient
 
+<<<<<<< HEAD
+- (id) initWithID: (NSInteger *) pID andName: (NSString *) name andLastName: (NSString *) lastname1 {
+=======
 - (id) initWithID: (NSInteger) pID andName: (NSString *) name andLastName: (NSString *) lastname1 {
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
         self = [super init];
         if (self) {
                 self.pID = pID;
@@ -20,8 +24,11 @@
         return self;
 }
 
+<<<<<<< HEAD
+=======
 - (NSString *)getFullName {
     return [NSString stringWithFormat:@"%@ %@", self.name, self.lastname1];
 }
 
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 @end

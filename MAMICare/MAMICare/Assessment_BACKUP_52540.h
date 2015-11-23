@@ -9,6 +9,26 @@
 #import <Foundation/Foundation.h>
 
 @interface Assessment : NSObject
+<<<<<<< HEAD
+@property NSInteger * pID;
+@property NSDate * startTime;
+@property NSDate * endTime;
+@property NSInteger * pulse;
+@property NSInteger * oxygen;
+@property NSInteger * systolicHeartRate;
+@property NSInteger * diastolicHeartRate;
+@property NSInteger * fetalHeartBeat;
+@property NSInteger * fetalRegion;
+@property CGFloat urineTest;
+@property BOOL contractionsExist;
+@property NSInteger * contractionsTime;
+@property CGFloat * weight;
+@property CGFloat * fundalHeight;
+@property NSInteger * basalGlucose;
+@property (nonatomic, strong) NSString * observations;
+@property BOOL isActive;
+@property NSDate * lastModified;
+=======
 
 // Attributes
 @property NSInteger pID;
@@ -38,5 +58,6 @@
 - (BOOL)physicalFieldsCompleted;
 - (BOOL)chemicalFieldsCompleted;
 - (BOOL)fetusFieldsCompleted;
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 
 @end

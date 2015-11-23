@@ -1,0 +1,27 @@
+//
+//  SocialWorker.h
+//  SPROC-Test
+//
+//  Created by Natalia García on 11/17/15.
+//  Copyright © 2015 Natalia Garcia. All rights reserved.
+//
+<<<<<<< HEAD
+=======
+#import <UIKit/UIKit.h>
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
+#import <Foundation/Foundation.h>
+
+@interface SocialWorker : NSObject
+
+@property NSInteger * pID;
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * lastname;
+@property (nonatomic, strong) NSString * username;
+@property (nonatomic, strong) NSString * password;
+<<<<<<< HEAD
+@property (nonatomic, strong) NSDate * createdAt;
+=======
+@property (nonatomic, strong) UIEvent * createdAt;
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
+
+@end
