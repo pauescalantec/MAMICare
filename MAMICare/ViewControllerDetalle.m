@@ -20,6 +20,7 @@
     // Si es consulta, add consult button
     if ([self.strSegue isEqualToString:@"consultarPacientes"]){
         self.btnStart.hidden = NO;
+        self.btnShadow.hidden = NO;
         
         //check if patient is new
         if ([self.strNuevo isEqualToString:@"Nuevo"]){
@@ -32,6 +33,7 @@
     // not a consult
     else {
         self.btnStart.hidden = YES;
+        self.btnShadow.hidden = YES;
         
         //check if patient is new
         if ([self.strNuevo isEqualToString:@"Nuevo"]){
