@@ -56,7 +56,8 @@
     self.assessment.fetalRegion = [self.tfFetalRegion.text integerValue];
     self.assessment.contractionsExist = [self.swtcontractionsExist isOn];
     self.assessment.contractionsTime = [self.tfContractionsTime.text integerValue];
-    self.assessment.observations = self.tvObservations.text;
+    //validate for default
+    self.assessment.observations = (self.tvObservations.text);
 }
 
 #pragma mark - Date Helper Functions
@@ -71,9 +72,10 @@
                                   sender:(id)sender {
     // validates all data from the object...
     [self retrieveDataFromFormToAssessment];
-    return [self.assessment physicalFieldsCompleted] &&
+    bool pass=  [self.assessment physicalFieldsCompleted] &&
            [self.assessment chemicalFieldsCompleted] &&
            [self.assessment fetusFieldsCompleted];
+    return pass;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
