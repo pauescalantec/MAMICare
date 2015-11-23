@@ -23,4 +23,6 @@
 
 - (void)btnCancelar:(UIBarButtonItem *)sender;
 
+@property (strong, nonatomic) IBOutlet UILabel *btnShadow;
+
 @end

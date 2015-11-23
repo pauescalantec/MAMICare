@@ -21,6 +21,7 @@
     // Do any additional setup after loading the view.
     self.botExistente.layer.cornerRadius = 100;
     self.botNuevo.layer.cornerRadius = 100;
+
 }
 
 - (void)didReceiveMemoryWarning {
