@@ -1,18 +1,13 @@
 //
 //  SocialWorker.m
-//  MAMICare
+//  SPROC-Test
 //
-//  Created by Natalia García on 11/3/15.
-//  Copyright © 2015 Paulina´s. All rights reserved.
+//  Created by Natalia García on 11/17/15.
+//  Copyright © 2015 Natalia Garcia. All rights reserved.
 //
 
 #import "SocialWorker.h"
 
 @implementation SocialWorker
-- (BOOL) authorize: (SocialWorker *) socialWorker withUsername:(NSString *) username andPassword:(NSString *) password {
-        //if exists
-        return YES;
-        //else 
-        //return NO;
-}
+
 @end

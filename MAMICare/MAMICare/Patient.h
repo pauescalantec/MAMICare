@@ -1,38 +1,29 @@
 //
-//  Patient.h
-//  MAMICare
+//  City.h
+//  SPROC-Test
 //
-//  Created by Natalia García on 11/3/15.
-//  Copyright © 2015 Paulina´s. All rights reserved.
+//  Created by Natalia García on 11/13/15.
+//  Copyright © 2015 Natalia Garcia. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "StatusReport.h"
-#import "User.h"
+#import <Foundation/Foundation.h>
+@interface Patient : NSObject
 
-@interface Patient : User
-@property NSUInteger pid;
-@property NSUInteger userId;
-@property NSInteger babiesDelivered;
-@property (nonatomic, strong) NSString *status;
-@property (nonatomic, strong) NSString *community;
-@property UIImage *photo;
+@property NSInteger pID;
+@property NSInteger addressID;
+@property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSString * lastname1;
+@property (nonatomic, strong) NSString * lastname2;
+@property (nonatomic, strong) NSDate * birthDate;
+@property (nonatomic, strong) NSString * email;
+@property (nonatomic, strong) NSString * curp;
+@property (nonatomic, strong) NSString * comments;
+@property BOOL * isActive;
+@property (nonatomic, strong) UIEvent * createdAt;
 
-- (StatusReport*) getMostRecentReport;
-- (id) initWithPid: (NSUInteger) pid
-        name: (NSString *) name
-        lastName: (NSString *) last
-        oid: (NSUInteger) oid
-        age: (NSInteger) age
-        street: (NSString *) st
-        streetNumber: (NSInteger) stNum
-        municipality: (NSString *) mun
-        city: (NSString *) city
-        state: (NSString *) state
-        createdAt: (NSDate *) createdAt
-        babiesDelivered: (NSInteger) babies
-        status: (NSString *) stat
-        community: (NSString *) comm
-        photo: (UIImage *) photo;
+
+//methods
+- (id) initWithID: (NSInteger) pID andName: (NSString *) name andLastName: (NSString *) lastname1;
+- (NSString *)getFullName;
+
 @end

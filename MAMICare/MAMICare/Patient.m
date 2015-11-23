@@ -1,32 +1,27 @@
 //
-//  Patient.m
-//  MAMICare
+//  NSObject+City.m
+//  SPROC-Test
 //
-//  Created by Natalia García on 11/3/15.
-//  Copyright © 2015 Paulina´s. All rights reserved.
+//  Created by Natalia García on 11/13/15.
+//  Copyright © 2015 Natalia Garcia. All rights reserved.
 //
 
 #import "Patient.h"
 
 @implementation Patient
 
--(id) initWithPid:(NSUInteger)pid name:(NSString *)name lastName:(NSString *)last oid:(NSUInteger)oid age:(NSInteger)age street:(NSString *)st streetNumber:(NSInteger)stNum municipality:(NSString *)mun city:(NSString *)city state:(NSString *)state createdAt:(NSDate *)createdAt babiesDelivered:(NSInteger)babies status:(NSString *)stat community:(NSString *)comm photo:(UIImage *)photo {
-        
-        self = [super initWithName:name lastName:last oid:oid age:age street:st streetNumber:stNum municipality:mun city:city state:state createdAt:createdAt];
+- (id) initWithID: (NSInteger) pID andName: (NSString *) name andLastName: (NSString *) lastname1 {
+        self = [super init];
         if (self) {
-                _pid = pid;
-                _babiesDelivered = babies;
-                _status = stat;
-                _community = comm;
-                _photo = photo;
+                self.pID = pID;
+                self.name = name;
+                self.lastname1 = lastname1;
         }
         return self;
 }
 
-- (StatusReport*) getMostRecentReport {
-        StatusReport *report;
-        //query que le mandas oid del patient order by date
-        //y lo pones en un status report
-        return report;
+- (NSString *)getFullName {
+    return [NSString stringWithFormat:@"%@ %@", self.name, self.lastname1];
 }
+
 @end
