@@ -10,8 +10,8 @@
 
 @interface Assessment : NSObject
 @property NSInteger * pID;
-@property UIEvent * startTime;
-@property UIEvent * endTime;
+@property NSDate * startTime;
+@property NSDate * endTime;
 @property NSInteger * pulse;
 @property NSInteger * oxygen;
 @property NSInteger * systolicHeartRate;
@@ -26,6 +26,6 @@
 @property NSInteger * basalGlucose;
 @property (nonatomic, strong) NSString * observations;
 @property BOOL isActive;
-@property UIEvent * lastModified;
+@property NSDate * lastModified;
 
 @end

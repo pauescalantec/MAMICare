@@ -14,7 +14,7 @@
 @property NSInteger * assessmentID;
 @property NSInteger * patientID;
 @property NSInteger * socialWorkerID;
-@property UIEvent * createdAt;
+@property NSDate * createdAt;
 @property CGFloat overallScore;
 
 @end
