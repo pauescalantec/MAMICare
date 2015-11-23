@@ -53,6 +53,7 @@
 		CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */; };
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
 		CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35451BEBD6F600471AED /* ResultsTableController.m */; };
+		FF4143C01C02A31F00DB79A1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143BF1C02A31F00DB79A1 /* Address.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsTableViewController.m; sourceTree = "<group>"; };
 		CABC35441BEBD6F600471AED /* ResultsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableController.h; sourceTree = "<group>"; };
 		CABC35451BEBD6F600471AED /* ResultsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableController.m; sourceTree = "<group>"; };
+		FF4143BE1C02A31F00DB79A1 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		FF4143BF1C02A31F00DB79A1 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +278,8 @@
 		FF5E17EB1BE990B5009B0F9E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FF4143BE1C02A31F00DB79A1 /* Address.h */,
+				FF4143BF1C02A31F00DB79A1 /* Address.m */,
 				CA03412C1BFD89CF006F5875 /* Assessment.h */,
 				CA03412D1BFD89CF006F5875 /* Assessment.m */,
 				CA03412E1BFD89CF006F5875 /* Consultation.h */,
@@ -472,6 +477,7 @@
 			files = (
 				2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */,
 				CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */,
+				FF4143C01C02A31F00DB79A1 /* Address.m in Sources */,
 				CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */,
 				CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */,
 				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
