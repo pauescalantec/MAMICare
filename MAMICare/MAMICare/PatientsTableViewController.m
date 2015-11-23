@@ -37,16 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
         Patient *testPatient[5];
-        testPatient[0] = [[Patient alloc] initWithPid: 1 name:@"Natalia" lastName:@"Garcia Torres" oid:1 age:21 street:@"Villa Chipinque" streetNumber:318 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:1 status:@"Bueno" community:@"Caracol" photo:[UIImage imageNamed:@"w1.png"]];
-        
-        testPatient[1] = [[Patient alloc] initWithPid: 1 name:@"Paulina" lastName:@"Escalante Campbell" oid:2 age:21 street:@"Jeronimo Siller" streetNumber:207 municipality:@"San Pedro Garza Garcia" city:@"Monterrey" state:@"Nuevo Leon" createdAt: [[NSDate alloc]init] babiesDelivered:2 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w2.png"]];
-        
-        testPatient[2] = [[Patient alloc] initWithPid: 1 name:@"Juno" lastName:@"Carrera Rodriguez" oid:1 age:21 street:@"Paseo Junquera" streetNumber:93 municipality:@"Catí" city:@"Catí" state:@"Puebla" createdAt: [[NSDate alloc]init] babiesDelivered:0 status:@"Regular" community:@"Caracol" photo:[UIImage imageNamed:@"w3.png"]];
-        
-        testPatient[3] = [[Patient alloc] initWithPid: 1 name:@"Obdulia" lastName:@"Rosado Candelaria" oid:1 age:21 street:@"Herrería" streetNumber:91 municipality:@"Monachil" city:@"Monachil" state:@"Yucatán" createdAt: [[NSDate alloc]init] babiesDelivered:5 status:@"Malo" community:@"Caracol" photo:[UIImage imageNamed:@"w4.png"]];
-        
-        self.patients = [NSMutableArray arrayWithObjects:testPatient[0], testPatient[1], testPatient[2], testPatient[3], testPatient[4], nil];
-
+    
     _resultsTableController = [[ResultsTableController alloc] init];
     _searchController = [[UISearchController alloc]
                          initWithSearchResultsController:self.resultsTableController];
@@ -146,8 +137,10 @@
 
 - (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
 # warning Implement configureCell method
+    NSString *photoURL = [NSString stringWithFormat:@"patient_%ld.jpg",
+                          (long)patient.pID];
     cell.lblPatientName.text = patient.getFullName;
-    cell.imgPatientImage.image = patient.photo;
+    cell.imgPatientImage.image = [UIImage imageNamed:photoURL];
 }
 
 //

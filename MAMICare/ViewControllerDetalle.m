@@ -29,7 +29,7 @@
         }
     }
     
-    //not a consult
+    // not a consult
     else {
         self.btnStart.hidden = YES;
         
@@ -41,14 +41,14 @@
         }
     }
     
-    //modify title
+    // modify the title
     if ([self.strNuevo isEqualToString:@"Nuevo"]){
         self.title = @"Detalle Paciente Nuevo";
-    }
-    
-    else{
+    } else {
         self.title = @"Detalle Paciente";
     }
+    
+    [self configureView];
     
 }
 
@@ -62,8 +62,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    
 }
 
 
