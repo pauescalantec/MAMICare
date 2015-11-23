@@ -1,6 +1,5 @@
 //
-//  NSObject+DBManager.m
-//  SPROC-Test
+//  DBManager.m
 //
 //  Created by Natalia García on 11/17/15.
 //  Copyright © 2015 Natalia Garcia. All rights reserved.
@@ -23,15 +22,7 @@ static sqlite3_stmt *statement = nil;
 }
 
 -(BOOL)createDB{
-        NSString *docsDir;
-        NSArray *dirPaths;
-        // Get the documents directory
-        dirPaths = NSSearchPathForDirectoriesInDomains
-        (NSDocumentDirectory, NSUserDomainMask, YES);
-        docsDir = dirPaths[0];
-        // Build the path to the database file
-        dbPath = [[NSString alloc] initWithString:
-                  [docsDir stringByAppendingPathComponent: @"MAMICare2.db"]];
+        dbPath = [[NSBundle mainBundle] pathForResource:@"MAMICare" ofType:@"sqlite3"];
         BOOL isSuccess = YES;
         NSFileManager *filemgr = [NSFileManager defaultManager];
         NSLog(dbPath);
@@ -75,6 +66,10 @@ static sqlite3_stmt *statement = nil;
         return 0;
 }
 
+-(BOOL) createNewConsultation: (Consultation*) newConsultation {
+        return YES;
+}
+
 -(BOOL) createNewPatient: (Patient*) newPatient withAddress: (Address*) newAddress {
         newPatient.pAddress = [[Address alloc] init];
         newAddress.pID = [self createNewAddress:newAddress];
@@ -99,6 +94,8 @@ static sqlite3_stmt *statement = nil;
         return NO;
 }
 
+
+
 -(Address*) readAddress: (int) addressID {
         Address *resultAddress = [[Address alloc] init];
         const char *thePath = [dbPath UTF8String];
@@ -115,37 +112,45 @@ static sqlite3_stmt *statement = nil;
                                 if (sqlite3_column_type(statement, 0) != SQLITE_NULL) {
                                         NSInteger pID = sqlite3_column_int(statement, 0);
                                         resultAddress.pID = pID;
+                                        NSLog(@"Address id");
                                 }
                                 if (sqlite3_column_type(statement, 1) != SQLITE_NULL) {
                                         NSString *addressLine1 =  [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 1)];
                                         resultAddress.addressLine1 = addressLine1;
+                                        NSLog(@"Address line 1");
                                 }
                                 if (sqlite3_column_type(statement, 2) != SQLITE_NULL) {
                                         NSString *addressLine2 =  [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 2)];
                                         resultAddress.addressLine2 = addressLine2;
+                                        NSLog(@"Address line 2");
                                 }
                                 if (sqlite3_column_type(statement, 3) != SQLITE_NULL) {
                                         NSString *city = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 3)];
                                         resultAddress.city = city;
+                                        NSLog(@"City");
                                 }
                                 if (sqlite3_column_type(statement, 4) != SQLITE_NULL) {
                                         NSString *state = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 4)];
                                         resultAddress.state = state;
+                                        NSLog(@"State");
                                 }
                                 if (sqlite3_column_type(statement, 5) != SQLITE_NULL) {
                                         NSString *country = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 5)];
                                         resultAddress.country = country;
+                                        NSLog(@"Country");
                                 }
                                 if (sqlite3_column_type(statement, 6) != SQLITE_NULL) {
                                         NSInteger zipcode = sqlite3_column_int(statement, 6);
                                         resultAddress.zipCode = zipcode;
+                                        NSLog(@"Zip code");
                                 }
                                 if (sqlite3_column_type(statement, 7) != SQLITE_NULL) {
-                                        char *epochCreatedAt = (char *)sqlite3_column_text(statement, 10);
+                                        char *epochCreatedAt = (char *)sqlite3_column_text(statement, 7);
                                         NSString *epochString  = [NSString stringWithUTF8String:epochCreatedAt];
                                         epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
                                         NSTimeInterval seconds = [epochString doubleValue];
                                         resultAddress.createdAt = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+                                        NSLog(@"Created at");
                                 }
                         }
                 }
@@ -187,38 +192,47 @@ static sqlite3_stmt *statement = nil;
                                 NSInteger pID = sqlite3_column_int(statement, 0);
                                 tmpPatient.pID = pID;
                                 if (sqlite3_column_type(statement, 1) != SQLITE_NULL) {
-                                        NSInteger addressID = sqlite3_column_int(statement, 1);
-                                        tmpPatient.pAddress = [self readAddress:addressID];
+                                        int addressID = sqlite3_column_int(statement, 1);
+                                        Address *tmpAddress = [self readAddress:addressID];
+                                        tmpPatient.pAddress = tmpAddress;
+                                        NSLog(@"Address ID");
                                 }
                                 if (sqlite3_column_type(statement, 2) != SQLITE_NULL) {
                                         NSString *name = [[NSString alloc] initWithUTF8String: (const char *) sqlite3_column_text(statement, 2)];
                                         tmpPatient.name = name;
+                                        NSLog(@"Name");
                                 }
                                 if (sqlite3_column_type(statement, 3) != SQLITE_NULL) {
                                         NSString *lastName1 = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text (statement, 3)];
                                         tmpPatient.lastname1 = lastName1;
+                                        NSLog(@"Last name 1");
                                 }
                                 if (sqlite3_column_type(statement, 4) != SQLITE_NULL) {
                                         NSString *lastName2  = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text (statement, 4)];
                                         tmpPatient.lastname2 = lastName2;
+                                        NSLog(@"Last name 2");
                                 }
                                 if (sqlite3_column_type(statement, 5) != SQLITE_NULL) {
                                         char *birthDateColumn = (char *)sqlite3_column_text(statement, 5);
                                         NSString *birthDateString  = [NSString stringWithUTF8String:birthDateColumn];
                                         birthDateString = [birthDateString stringByReplacingOccurrencesOfString:@" " withString:@""];
                                         tmpPatient.birthDate = [dateFormat dateFromString:birthDateString];
+                                        NSLog(@"Birthday");
                                 }
                                 if (sqlite3_column_type(statement, 6) != SQLITE_NULL) {
                                         NSString *email = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 6)];
                                         tmpPatient.email = email;
+                                        NSLog(@"Email");
                                 }
                                 if (sqlite3_column_type(statement, 7) != SQLITE_NULL) {
                                         NSString *curp = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 7)];
                                         tmpPatient.curp = curp;
+                                        NSLog(@"Curp");
                                 }
                                 if (sqlite3_column_type(statement, 8) != SQLITE_NULL) {
                                         NSString *comments = [[NSString alloc] initWithUTF8String:(const char *) sqlite3_column_text(statement, 8)];
                                         tmpPatient.comments = comments;
+                                        NSLog(@"Comments");
                                 }
                                 int isActive = sqlite3_column_int(statement, 9);
                                 tmpPatient.isActive = (isActive != 0);
@@ -228,6 +242,7 @@ static sqlite3_stmt *statement = nil;
                                         epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
                                         NSTimeInterval seconds = [epochString doubleValue];
                                         tmpPatient.createdAt = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+                                        NSLog(@"Created at");
                                 }
                                 [patientArray addObject:tmpPatient];
                                 tmpPatient = [[Patient alloc] init];
@@ -242,40 +257,6 @@ static sqlite3_stmt *statement = nil;
         }
         return YES;
 }
-//-(Patient*) readNameAndLastName: (NSString*) idNum {
-//        sqlite3_reset(statement);
-//        Patient *resultPatient = [[Patient alloc] init];
-//        
-//        const char *thePath = [dbPath UTF8String];
-//        
-//        if (sqlite3_open(thePath, &database) == SQLITE_OK)
-//        {
-//                NSString *querySQL = [NSString stringWithFormat:
-//                                      @"SELECT firstName, lastName1 FROM Patient WHERE id=%@",
-//                                      idNum];
-//                
-//                const char *query_stmt = [querySQL UTF8String];
-//                
-//                if (sqlite3_prepare_v2(database,
-//                                       query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-//                        if (sqlite3_step(statement) == SQLITE_ROW)
-//                        {
-//                                NSString *nameField = [[NSString alloc]
-//                                                       initWithUTF8String:
-//                                                       (const char *) sqlite3_column_text(
-//                                                                                          statement, 0)];
-//                                resultPatient.name = nameField;
-//                                NSString *lastNameField = [[NSString alloc]
-//                                                           initWithUTF8String:(const char *)
-//                                                           sqlite3_column_text(statement, 1)];
-//                                resultPatient.lastname1 = lastNameField;
-//                                return resultPatient;
-//                        } else {
-//                                return nil;
-//                        }
-//                }
-//        }
-//        return nil;
-//}
+
 
 @end

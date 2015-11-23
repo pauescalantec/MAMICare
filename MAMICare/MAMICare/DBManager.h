@@ -10,6 +10,7 @@
 #import <sqlite3.h>
 #import "Patient.h"
 #import "Address.h"
+#import "Consultation.h"
 extern NSMutableArray *patientArray;
 @interface DBManager : NSObject {
         NSString *dbPath;
@@ -20,6 +21,6 @@ extern NSMutableArray *patientArray;
 //-(Patient*) readNameAndLastName: (NSString*) idNum;
 -(BOOL) loadAllPatients;
 -(BOOL) createNewPatient: (Patient*) newPatient withAddress: (Address*) newAddress;
--(BOOL) createNewAssessment:
+-(BOOL) createNewConsultation: (Consultation*) newConsultation;
 
 @end

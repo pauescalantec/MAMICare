@@ -54,6 +54,8 @@
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
 		CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35451BEBD6F600471AED /* ResultsTableController.m */; };
 		FF4143C01C02A31F00DB79A1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143BF1C02A31F00DB79A1 /* Address.m */; settings = {ASSET_TAGS = (); }; };
+		FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143C61C02B2FC00DB79A1 /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
+		FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +145,9 @@
 		CABC35451BEBD6F600471AED /* ResultsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableController.m; sourceTree = "<group>"; };
 		FF4143BE1C02A31F00DB79A1 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		FF4143BF1C02A31F00DB79A1 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
+		FF4143C51C02B2FC00DB79A1 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		FF4143C61C02B2FC00DB79A1 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAMICare.sqlite3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +201,9 @@
 				CA0CF0B31BE99075006875F7 /* Custom Tableview Cell */,
 				2B3B71AC1BC6EB9F001D766D /* AppDelegate.h */,
 				2B3B71AD1BC6EB9F001D766D /* AppDelegate.m */,
+				FF4143C51C02B2FC00DB79A1 /* DBManager.h */,
+				FF4143C61C02B2FC00DB79A1 /* DBManager.m */,
+				FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */,
 				FF5E17ED1BE990CB009B0F9E /* ViewControllers */,
 				2B3B71B51BC6EB9F001D766D /* Assets.xcassets */,
 				FF5E17EB1BE990B5009B0F9E /* Models */,
@@ -440,6 +448,7 @@
 				2BB4ABF51BF92F7900CAD218 /* backgroundAlt.jpg in Resources */,
 				2BF5130E1BC77A63002B790B /* w3.png in Resources */,
 				2B4BB8681BF9A48200900694 /* nuevaFoto.png in Resources */,
+				FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */,
 				2BD4F1301BCF6A1C007A50C0 /* refresh.png in Resources */,
 				2BF513211BC784AA002B790B /* house.png in Resources */,
 				2BF513131BC77D42002B790B /* c1.png in Resources */,
@@ -478,6 +487,7 @@
 				2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */,
 				CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */,
 				FF4143C01C02A31F00DB79A1 /* Address.m in Sources */,
+				FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */,
 				CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */,
 				CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */,
 				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
