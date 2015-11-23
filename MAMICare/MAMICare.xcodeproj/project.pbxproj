@@ -52,10 +52,12 @@
 		CA0341371BFD89CF006F5875 /* SocialWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0341331BFD89CF006F5875 /* SocialWorker.m */; };
 		CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */; };
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
+		CA29E0A01C02BB8E0095FEBE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */; };
+		CA29E0A21C02BB960095FEBE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */; };
 		CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35451BEBD6F600471AED /* ResultsTableController.m */; };
-		FF4143C01C02A31F00DB79A1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143BF1C02A31F00DB79A1 /* Address.m */; settings = {ASSET_TAGS = (); }; };
-		FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143C61C02B2FC00DB79A1 /* DBManager.m */; settings = {ASSET_TAGS = (); }; };
-		FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */; settings = {ASSET_TAGS = (); }; };
+		FF4143C01C02A31F00DB79A1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143BF1C02A31F00DB79A1 /* Address.m */; };
+		FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143C61C02B2FC00DB79A1 /* DBManager.m */; };
+		FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +143,8 @@
 		CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
 		CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsTableViewController.h; sourceTree = "<group>"; };
 		CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsTableViewController.m; sourceTree = "<group>"; };
+		CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CABC35441BEBD6F600471AED /* ResultsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableController.h; sourceTree = "<group>"; };
 		CABC35451BEBD6F600471AED /* ResultsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableController.m; sourceTree = "<group>"; };
 		FF4143BE1C02A31F00DB79A1 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA29E0A21C02BB960095FEBE /* libsqlite3.0.tbd in Frameworks */,
+				CA29E0A01C02BB8E0095FEBE /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +184,8 @@
 		2B3B719D1BC6EB9F001D766D = {
 			isa = PBXGroup;
 			children = (
+				CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */,
+				CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */,
 				2B3B71A81BC6EB9F001D766D /* MAMICare */,
 				2B3B71C21BC6EBA0001D766D /* MAMICareTests */,
 				2B3B71CD1BC6EBA0001D766D /* MAMICareUITests */,

@@ -25,5 +25,7 @@
 //methods
 - (id) initWithID: (NSInteger) pID andName: (NSString *) name andLastName: (NSString *) lastname1;
 - (NSString *)getFullName;
+- (NSInteger)getAge;
+- (NSString *)getPhotoURL;
 
 @end
