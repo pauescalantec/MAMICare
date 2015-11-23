@@ -21,7 +21,7 @@
 }
 
 - (NSString *)getFullName {
-    return [NSString stringWithFormat:@"%@ %@", self.name, self.lastname1];
+    return [NSString stringWithFormat:@"%@ %@", self.lastname1, self.lastname2];
 }
 
 @end
