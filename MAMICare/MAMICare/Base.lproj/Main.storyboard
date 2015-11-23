@@ -1392,8 +1392,8 @@
         <image name="w4.png" width="361" height="361"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bGd-qK-VI9"/>
         <segue reference="LfS-T7-UtP"/>
-        <segue reference="si1-JV-bLd"/>
         <segue reference="yYj-Lr-FGX"/>
     </inferredMetricsTieBreakers>
 </document>
