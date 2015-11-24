@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Patient.h"
-#import "Assessment.h"
+#import "Consultation.h"
 
 @interface MomAssesmentViewController : UIViewController
 
