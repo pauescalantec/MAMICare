@@ -87,6 +87,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // sets the assesment for the next part of the form
     [[segue destinationViewController] setAssessment:self.assessment];
+    [[segue destinationViewController] setPatient: self.patient];
 }
 
 // Remove Keyboard
