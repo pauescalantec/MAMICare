@@ -7,11 +7,12 @@
 //
 
 #import "ViewControllerLogin.h"
+#import "ViewControllerDashboard.h"
 
 @interface ViewControllerLogin ()
 
 @end
-SocialWorker *currentUser;
+
 @implementation ViewControllerLogin
 
 - (void)viewDidLoad {
@@ -82,14 +83,12 @@ SocialWorker *currentUser;
             self.labWarning.hidden = NO;
             return NO;
         }
-        
-        if(![SocialWorker loginwithName:self.txtUser.text andPassword:self.txtPassword.text]) {
-            self.labWarning.text = @"No existe ese usuario con esa contraseña.";
-            self.labWarning.hidden = NO;
-            return NO;
-        }
+        return YES;
     }
-    return YES;
+    
+    else {
+        return YES;
+    }
 }
 
 - (IBAction)actEditing:(UITextField *)sender {

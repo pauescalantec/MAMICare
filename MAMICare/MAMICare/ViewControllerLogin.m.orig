@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerLogin.h"
+#import "ViewControllerDashboard.h"
 
 @interface ViewControllerLogin ()
 
@@ -43,6 +44,17 @@ SocialWorker *currentUser;
     // Dispose of any resources that can be recreated.
 }
 
+<<<<<<< HEAD
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+=======
 
 #pragma mark - Navigation
 /*
@@ -52,6 +64,7 @@ SocialWorker *currentUser;
     // Pass the selected object to the new view controller.
 }*/
 
+>>>>>>> 56aacd0e054afc37dfb3ff7b77e78ad258563fd6
 
 //validate segue if user has not entered username
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {

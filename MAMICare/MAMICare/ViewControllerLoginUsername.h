@@ -28,6 +28,4 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *labWarning;
 
-
-
 @end

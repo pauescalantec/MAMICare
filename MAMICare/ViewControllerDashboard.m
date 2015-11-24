@@ -8,7 +8,9 @@
 
 
 #import "ViewControllerDashboard.h"
+#import "ViewControllerLoginUsername.h"
 #import "PatientsTableViewController.h"
+#import "ViewControllerLoginUsername.h"
 
 @interface ViewControllerDashboard ()
 
@@ -23,6 +25,9 @@
     //button formatting
     self.botConsulta.layer.cornerRadius = 100;
     self.botPacientes.layer.cornerRadius = 100;
+    self.viewLogOut.hidden = YES;
+    self.outletBtnCancelar.layer.cornerRadius = 5;
+    self.outletBtnCancel.layer.cornerRadius = 5;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,5 +48,32 @@
     }
 }
 
+- (IBAction)btnSalir:(UIButton *)sender {
+    self.outletBtnLogOut.enabled = NO;
+    self.viewLogOut.hidden = NO;
+    self.blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    self.visualEffectView = [[UIVisualEffectView alloc] initWithEffect:self.blurEffect];
+    self.visualEffectView.alpha = 0.5;
+    
+    self.visualEffectView.frame = self.viewNormal.bounds;
+    [self.viewNormal addSubview:self.visualEffectView];
+}
 
+
+- (IBAction)CancelarLogOut:(UIButton *)sender {
+    self.viewLogOut.hidden = YES;
+    self.outletBtnLogOut.enabled = YES;
+    [self.visualEffectView removeFromSuperview];
+}
+
+- (IBAction)ConfirmarLogOut:(UIButton *)sender {
+    self.viewLogOut.hidden = YES;
+    self.outletBtnLogOut.enabled = YES;
+    UIStoryboard * storyboard = self.storyboard;
+    NSString * storyboardName = [storyboard valueForKey:@"name"];
+    storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    ViewControllerLoginUsername *add = [storyboard instantiateViewControllerWithIdentifier:@"first"];
+    
+    [self presentViewController:add animated:YES completion:nil];
+}
 @end

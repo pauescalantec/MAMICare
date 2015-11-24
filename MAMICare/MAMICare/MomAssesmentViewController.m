@@ -161,6 +161,7 @@
             
             [backgroundLabel addSubview:self.l1];
             [backgroundLabel addSubview:line];
+            line.enabled = NO;
             [backgroundLabel addSubview:self.tfWeight];
             
             [self.tfWeight addTarget:self

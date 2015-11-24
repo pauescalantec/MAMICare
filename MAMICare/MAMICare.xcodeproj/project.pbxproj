@@ -21,6 +21,8 @@
 		2B606D141BFAD94900739133 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B606D131BFAD94900739133 /* email.png */; };
 		2B73E2D21BF86A5100E0B619 /* ViewControllerDetalle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B73E2D11BF86A5100E0B619 /* ViewControllerDetalle.m */; };
 		2B98FF9B1BFD918300329228 /* cake.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B98FF9A1BFD918300329228 /* cake.png */; };
+		2BB06CB61C03FC4700BEE309 /* B4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BB06CB51C03FC4700BEE309 /* B4.jpg */; };
+		2BB06CB91C03FD5700BEE309 /* TerminoConsultaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */; };
 		2BB4ABF51BF92F7900CAD218 /* backgroundAlt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4ABF41BF92F7900CAD218 /* backgroundAlt.jpg */; };
 		2BC2F5A11BF67543008F0FDF /* ViewControllerLoginUsername.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC2F5A01BF67543008F0FDF /* ViewControllerLoginUsername.m */; };
 		2BD4F12A1BCF62E5007A50C0 /* newContact.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F1291BCF62E5007A50C0 /* newContact.png */; };
@@ -101,6 +103,9 @@
 		2B73E2D01BF86A5100E0B619 /* ViewControllerDetalle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerDetalle.h; path = ../ViewControllerDetalle.h; sourceTree = "<group>"; };
 		2B73E2D11BF86A5100E0B619 /* ViewControllerDetalle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerDetalle.m; path = ../ViewControllerDetalle.m; sourceTree = "<group>"; };
 		2B98FF9A1BFD918300329228 /* cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cake.png; sourceTree = "<group>"; };
+		2BB06CB51C03FC4700BEE309 /* B4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B4.jpg; sourceTree = "<group>"; };
+		2BB06CB71C03FD5700BEE309 /* TerminoConsultaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerminoConsultaViewController.h; sourceTree = "<group>"; };
+		2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerminoConsultaViewController.m; sourceTree = "<group>"; };
 		2BB4ABF41BF92F7900CAD218 /* backgroundAlt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundAlt.jpg; sourceTree = "<group>"; };
 		2BC2F59F1BF67543008F0FDF /* ViewControllerLoginUsername.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLoginUsername.h; sourceTree = "<group>"; };
 		2BC2F5A01BF67543008F0FDF /* ViewControllerLoginUsername.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLoginUsername.m; sourceTree = "<group>"; };
@@ -274,6 +279,7 @@
 				2BB4ABF41BF92F7900CAD218 /* backgroundAlt.jpg */,
 				2BF513031BC76249002B790B /* line.png */,
 				2BF513161BC780ED002B790B /* settings.png */,
+				2BB06CB51C03FC4700BEE309 /* B4.jpg */,
 				2BF513081BC77A63002B790B /* w1.png */,
 				2BF513091BC77A63002B790B /* w2.png */,
 				2BF5130A1BC77A63002B790B /* w3.png */,
@@ -332,6 +338,8 @@
 				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
 				CABC35441BEBD6F600471AED /* ResultsTableController.h */,
 				CABC35451BEBD6F600471AED /* ResultsTableController.m */,
+				2BB06CB71C03FD5700BEE309 /* TerminoConsultaViewController.h */,
+				2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -447,6 +455,7 @@
 				2BF513041BC76249002B790B /* line.png in Resources */,
 				2B98FF9B1BFD918300329228 /* cake.png in Resources */,
 				2BF513141BC77D42002B790B /* c2.png in Resources */,
+				2BB06CB61C03FC4700BEE309 /* B4.jpg in Resources */,
 				2BF513241BC784F6002B790B /* orangeDot.png in Resources */,
 				2B606D141BFAD94900739133 /* email.png in Resources */,
 				2BF5130F1BC77A63002B790B /* w4.png in Resources */,
@@ -513,6 +522,7 @@
 				CA0341361BFD89CF006F5875 /* Patient.m in Sources */,
 				2BF5131D1BC7817A002B790B /* ViewControllerConsultar.m in Sources */,
 				CA0341371BFD89CF006F5875 /* SocialWorker.m in Sources */,
+				2BB06CB91C03FD5700BEE309 /* TerminoConsultaViewController.m in Sources */,
 				2B3B71AB1BC6EB9F001D766D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
