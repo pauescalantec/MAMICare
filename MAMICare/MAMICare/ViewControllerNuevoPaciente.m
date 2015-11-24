@@ -109,10 +109,9 @@
     newPatient.email = self.txtCorreo.text;
     newPatient.curp = self.txtCURP.text;
     
-    [newPatient save];
+     [newPatient save];
     
     // saving the patient in the global array
-    [patientArray addObject:newPatient];
     return newPatient;
 }
 
