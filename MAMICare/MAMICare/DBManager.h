@@ -16,11 +16,11 @@ extern NSMutableArray *patientArray;
         NSString *dbPath;
 }
 
-+(DBManager*) getSharedInstance;
--(BOOL) createDB;
++ (DBManager*) getSharedInstance;
+- (BOOL) createDB;
 //-(Patient*) readNameAndLastName: (NSString*) idNum;
--(BOOL) loadAllPatients;
--(BOOL) createNewPatient: (Patient*) newPatient withAddress: (Address*) newAddress;
--(BOOL) createNewConsultation: (Consultation*) newConsultation;
+- (BOOL) loadAllPatients;
+- (BOOL) createNewPatient: (Patient*) newPatient withAddress: (Address*) newAddress;
+- (BOOL) createNewConsultation: (Consultation*) newConsultation;
 
 @end

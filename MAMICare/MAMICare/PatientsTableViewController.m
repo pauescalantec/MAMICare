@@ -53,6 +53,10 @@
     self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
     self.searchController.searchBar.delegate = self; // so we can monitor text changes + others
     self.definesPresentationContext = YES;
+    
+    // reloading the data
+    self.tableView.dataSource = self;
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -123,7 +127,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.patients.count;
+    return patientArray.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -132,7 +136,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
-    Patient *patient = self.patients[indexPath.row];
+    Patient *patient = patientArray[indexPath.row];
     [self configureCell:cell forPatient:patient];
     return cell;
 }

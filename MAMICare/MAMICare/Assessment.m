@@ -57,10 +57,9 @@
 - (BOOL)fetusFieldsCompleted {
     BOOL a = (_fetalHeartBeat != 0);
     BOOL b = (_fetalRegion != 0);
-    BOOL c = (_contractionsExist);
-    BOOL d = (_contractionsTime != 0);
+    BOOL d = (_contractionsExist) ? (_contractionsTime != 0) : true;
     BOOL e = (![_observations isEqualToString:@""]);
-    return  a && b && c && d && e;
+    return  a && b && d && e;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ViewControllerNuevoPaciente.h"
 #import "ViewControllerDetalle.h"
+#import "DBManager.h"
 
 @interface ViewControllerNuevoPaciente ()
 
@@ -78,14 +79,45 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([[segue identifier] isEqualToString: @"detalleNuevo"]) {
-        ViewControllerDetalle *viewPacientes= [segue destinationViewController];
-        viewPacientes.strSegue = self.strSegue;
-        viewPacientes.strNuevo = @"Nuevo";
+        ViewControllerDetalle *patientView = [segue destinationViewController];
+        patientView.strSegue = self.strSegue;
+        patientView.strNuevo = @"Nuevo";
         
-        //save patient
+        // TODO: completar este método
+        Patient *newPatient = [self savePatient];
+        [patientView setPatient:newPatient];
     }
 }
 
+#pragma mark - Patient Save Methods and Helpers
+
+- (Patient *)savePatient {
+    // creating the address first
+    Address *addr = [[Address alloc] init];
+    addr.addressLine1 = self.txtAddress1.text;
+    addr.addressLine2 = self.txtAddress2.text;
+    addr.city = self.txtCiudad.text;
+    addr.state = self.txtEstado.text;
+    addr.zipCode = [self.txtCodigo.text integerValue];
+    addr.country = self.txtPais.text;
+    
+    Patient *newPatient = [[Patient alloc] init];
+    newPatient.name = self.txtFirstName.text;
+    newPatient.lastname1 = self.txtFirstLastName.text;
+    newPatient.lastname2 = self.txtSecLastName.text;
+    newPatient.pAddress = addr;
+    newPatient.email = self.txtCorreo.text;
+    newPatient.curp = self.txtCURP.text;
+    
+    [newPatient save];
+    
+    // saving the patient in the global array
+    [patientArray addObject:newPatient];
+    return newPatient;
+}
+
+
+#pragma mark - Validations and Keyboard Slide
 
 //validate segue if user has not entered username
 - (BOOL)checkEnabled{
