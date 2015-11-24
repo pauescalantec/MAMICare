@@ -60,6 +60,11 @@
     self.assessment.observations = (self.tvObservations.text);
     
     [self.assessment save];
+    Consultation *consultation = [[Consultation alloc] init];
+    consultation.assessmentID = self.assessment.pID;
+    consultation.socialWorkerID = currentUser.pID;
+    consultation.patientID = self.patient.pID;
+    [consultation save];
 }
 
 #pragma mark - Date Helper Functions

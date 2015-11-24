@@ -19,36 +19,38 @@
         }
         return NO;
 }
+
 -(id) load {
-        NSString *querySQL = [NSString stringWithFormat: @"SELECT * FROM Address WHERE id=%d", self.pID];
-        NSMutableDictionary *resultSet = [[DBManager getSharedInstance] queryDB:querySQL];
-        int max = [[resultSet objectForKey:@"id"] count];
-        for (int i = 0; i < max; i++) {
-                if (![[[resultSet objectForKey:@"addressLine1"] objectAtIndex:i] isEqualToString: @";"]) {
-                        self.addressLine1 = [[resultSet objectForKey:@"addressLine1"] objectAtIndex:i];
-                }
-                if (![[[resultSet objectForKey:@"addressLine2"] objectAtIndex:i] isEqualToString: @";"]) {
-                        self.addressLine2 = [resultSet objectForKey:@"addressLine2"];
-                }
-                if (![[[resultSet objectForKey:@"city"] objectAtIndex:i] isEqualToString: @";"]) {
-                        self.city = [resultSet objectForKey:@"city"];
-                }
-                if (![[[resultSet objectForKey:@"state"] objectAtIndex:i] isEqualToString: @";"]){
-                        self.state = [resultSet objectForKey:@"state"];
-                }
-                if (![[[resultSet objectForKey:@"country"] objectAtIndex:i] isEqualToString: @";"]) {
-                        self.country = [resultSet objectForKey:@"country"];
-                }
-                if (![[[resultSet objectForKey:@"zipCode"] objectAtIndex:i] isEqualToString: @";"]) {
-                        self.zipCode = [[resultSet objectForKey:@"zipCode"] integerValue];
-                }
-                if (![[[resultSet objectForKey:@"createdAt"] objectAtIndex:i] isEqualToString: @";"]) {
-                        NSString *epochString  = [resultSet objectForKey:@"createdAt"];
-                        epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
-                        NSTimeInterval seconds = [epochString doubleValue];
-                        self.createdAt = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
-                }
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT * FROM Address WHERE id=%d", self.pID];
+    NSMutableDictionary *resultSet = [[DBManager getSharedInstance] queryDB:querySQL];
+    int max = [[resultSet objectForKey:@"id"] count];
+    for (int i = 0; i < max; i++) {
+        if (![[[resultSet objectForKey:@"addressLine1"] objectAtIndex:i] isEqualToString: @";"]) {
+            self.addressLine1 = [[resultSet objectForKey:@"addressLine1"] objectAtIndex:i];
         }
-        return self;
+        if (![[[resultSet objectForKey:@"addressLine2"] objectAtIndex:i] isEqualToString: @";"]) {
+            self.addressLine2 = [[resultSet objectForKey:@"addressLine2"] objectAtIndex:i];
+        }
+        if (![[[resultSet objectForKey:@"city"] objectAtIndex:i] isEqualToString: @";"]) {
+            self.city = [[resultSet objectForKey:@"city"] objectAtIndex:i];
+        }
+        if (![[[resultSet objectForKey:@"state"] objectAtIndex:i] isEqualToString: @";"]){
+            self.state = [[resultSet objectForKey:@"state"] objectAtIndex:i];
+        }
+        if (![[[resultSet objectForKey:@"country"] objectAtIndex:i] isEqualToString: @";"]) {
+            self.country = [[resultSet objectForKey:@"country"] objectAtIndex:i];
+        }
+        if (![[[resultSet objectForKey:@"zipCode"] objectAtIndex:i] isEqualToString: @";"]) {
+            self.zipCode = [[[resultSet objectForKey:@"zipCode"] objectAtIndex:i] integerValue];
+        }
+        if (![[[resultSet objectForKey:@"createdAt"] objectAtIndex:i] isEqualToString: @";"]) {
+            NSString *epochString  = [[resultSet objectForKey:@"createdAt"] objectAtIndex:i];
+            epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
+            NSTimeInterval seconds = [epochString doubleValue];
+            self.createdAt = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+        }
+    }
+    return self;
 }
+
 @end
