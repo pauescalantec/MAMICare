@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewControllerLoginUsername.h"
 
 @interface ViewControllerLogin : UIViewController
 
