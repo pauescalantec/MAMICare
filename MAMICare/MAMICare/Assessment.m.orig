@@ -10,6 +10,9 @@
 
 @implementation Assessment
 
+<<<<<<< HEAD
+@end
+=======
 - (id)init {
     self = [super init];
     if (self) {
@@ -57,10 +60,12 @@
 - (BOOL)fetusFieldsCompleted {
     BOOL a = (_fetalHeartBeat != 0);
     BOOL b = (_fetalRegion != 0);
-    BOOL d = (_contractionsExist) ? (_contractionsTime != 0) : true;
+    BOOL c = (_contractionsExist);
+    BOOL d = (_contractionsTime != 0);
     BOOL e = (![_observations isEqualToString:@""]);
-    return  a && b && d && e;
+    return  a && b && c && d && e;
 }
 
 @end
 
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd

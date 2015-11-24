@@ -24,4 +24,18 @@
     return [NSString stringWithFormat:@"%@ %@", self.lastname1, self.lastname2];
 }
 
+- (NSInteger)getAge {
+    NSDate* now = [NSDate date];
+    NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
+                                       components:NSCalendarUnitYear
+                                       fromDate:self.birthDate
+                                       toDate:now
+                                       options:0];
+    return [ageComponents year];
+}
+
+- (NSString *)getPhotoURL {
+    return [NSString stringWithFormat:@"patient_%ld.png", (long)self.pID];
+}
+
 @end

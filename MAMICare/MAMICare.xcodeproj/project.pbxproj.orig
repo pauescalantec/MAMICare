@@ -14,15 +14,42 @@
 		2B3B71B91BC6EB9F001D766D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B3B71B71BC6EB9F001D766D /* LaunchScreen.storyboard */; };
 		2B3B71C41BC6EBA0001D766D /* MAMICareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B71C31BC6EBA0001D766D /* MAMICareTests.m */; };
 		2B3B71CF1BC6EBA0001D766D /* MAMICareUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B3B71CE1BC6EBA0001D766D /* MAMICareUITests.m */; };
-		2B49C70F1C02B86700F78C18 /* transition.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B49C70E1C02B86700F78C18 /* transition.png */; };
+<<<<<<< HEAD
+		2BD4F12A1BCF62E5007A50C0 /* newContact.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F1291BCF62E5007A50C0 /* newContact.png */; settings = {ASSET_TAGS = (); }; };
+		2BD4F12C1BCF6721007A50C0 /* searchBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12B1BCF6721007A50C0 /* searchBar.png */; settings = {ASSET_TAGS = (); }; };
+		2BD4F12E1BCF67C2007A50C0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12D1BCF67C2007A50C0 /* camera.png */; settings = {ASSET_TAGS = (); }; };
+		2BD4F1301BCF6A1C007A50C0 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12F1BCF6A1C007A50C0 /* refresh.png */; settings = {ASSET_TAGS = (); }; };
+		2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */; settings = {ASSET_TAGS = (); }; };
+		2BF512FF1BC750F2002B790B /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BF512FE1BC750F2002B790B /* Background.jpg */; settings = {ASSET_TAGS = (); }; };
+		2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF513011BC752EB002B790B /* ViewControllerLogin.m */; settings = {ASSET_TAGS = (); }; };
+		2BF513041BC76249002B790B /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513031BC76249002B790B /* line.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF513061BC771A2002B790B /* ViewControllerDashboard.m */; settings = {ASSET_TAGS = (); }; };
+		2BF5130C1BC77A63002B790B /* w1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513081BC77A63002B790B /* w1.png */; settings = {ASSET_TAGS = (); }; };
+		2BF5130D1BC77A63002B790B /* w2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513091BC77A63002B790B /* w2.png */; settings = {ASSET_TAGS = (); }; };
+		2BF5130E1BC77A63002B790B /* w3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF5130A1BC77A63002B790B /* w3.png */; settings = {ASSET_TAGS = (); }; };
+		2BF5130F1BC77A63002B790B /* w4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF5130B1BC77A63002B790B /* w4.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513131BC77D42002B790B /* c1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513101BC77D42002B790B /* c1.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513141BC77D42002B790B /* c2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513111BC77D42002B790B /* c2.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513151BC77D42002B790B /* c3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513121BC77D42002B790B /* c3.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513171BC780ED002B790B /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513161BC780ED002B790B /* settings.png */; settings = {ASSET_TAGS = (); }; };
+		2BF5131A1BC78169002B790B /* ViewControllerPacientes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF513191BC78169002B790B /* ViewControllerPacientes.m */; settings = {ASSET_TAGS = (); }; };
+		2BF5131D1BC7817A002B790B /* ViewControllerConsultar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF5131C1BC7817A002B790B /* ViewControllerConsultar.m */; settings = {ASSET_TAGS = (); }; };
+		2BF5131F1BC78404002B790B /* baby.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF5131E1BC78404002B790B /* baby.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513211BC784AA002B790B /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513201BC784AA002B790B /* house.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513241BC784F6002B790B /* orangeDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513221BC784F6002B790B /* orangeDot.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513251BC784F6002B790B /* blueDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513231BC784F6002B790B /* blueDot.png */; settings = {ASSET_TAGS = (); }; };
+		2BF513271BC78775002B790B /* back.ico in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513261BC78775002B790B /* back.ico */; settings = {ASSET_TAGS = (); }; };
+		FF316EC31BFD0DB600626406 /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = FF316EBC1BFD0DB600626406 /* Patient.m */; settings = {ASSET_TAGS = (); }; };
+		FF316EC41BFD0DB600626406 /* Consultation.m in Sources */ = {isa = PBXBuildFile; fileRef = FF316EBE1BFD0DB600626406 /* Consultation.m */; settings = {ASSET_TAGS = (); }; };
+		FF316EC51BFD0DB600626406 /* Assessment.m in Sources */ = {isa = PBXBuildFile; fileRef = FF316EC01BFD0DB600626406 /* Assessment.m */; settings = {ASSET_TAGS = (); }; };
+		FF316EC61BFD0DB600626406 /* SocialWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = FF316EC21BFD0DB600626406 /* SocialWorker.m */; settings = {ASSET_TAGS = (); }; };
+=======
 		2B4BB8661BF9A46400900694 /* UsuarioDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4BB8651BF9A46400900694 /* UsuarioDefault.png */; };
 		2B4BB8681BF9A48200900694 /* nuevaFoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B4BB8671BF9A48200900694 /* nuevaFoto.png */; };
 		2B606D121BFA9A1B00739133 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B606D111BFA9A1B00739133 /* home.png */; };
 		2B606D141BFAD94900739133 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B606D131BFAD94900739133 /* email.png */; };
 		2B73E2D21BF86A5100E0B619 /* ViewControllerDetalle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B73E2D11BF86A5100E0B619 /* ViewControllerDetalle.m */; };
 		2B98FF9B1BFD918300329228 /* cake.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B98FF9A1BFD918300329228 /* cake.png */; };
-		2BB06CB61C03FC4700BEE309 /* B4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BB06CB51C03FC4700BEE309 /* B4.jpg */; };
-		2BB06CB91C03FD5700BEE309 /* TerminoConsultaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */; };
 		2BB4ABF51BF92F7900CAD218 /* backgroundAlt.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4ABF41BF92F7900CAD218 /* backgroundAlt.jpg */; };
 		2BC2F5A11BF67543008F0FDF /* ViewControllerLoginUsername.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC2F5A01BF67543008F0FDF /* ViewControllerLoginUsername.m */; };
 		2BD4F12A1BCF62E5007A50C0 /* newContact.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F1291BCF62E5007A50C0 /* newContact.png */; };
@@ -55,12 +82,8 @@
 		CA0341371BFD89CF006F5875 /* SocialWorker.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0341331BFD89CF006F5875 /* SocialWorker.m */; };
 		CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */; };
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
-		CA29E0A01C02BB8E0095FEBE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */; };
-		CA29E0A21C02BB960095FEBE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */; };
 		CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35451BEBD6F600471AED /* ResultsTableController.m */; };
-		FF4143C01C02A31F00DB79A1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143BF1C02A31F00DB79A1 /* Address.m */; };
-		FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143C61C02B2FC00DB79A1 /* DBManager.m */; };
-		FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */; };
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +118,6 @@
 		2B3B71CA1BC6EBA0001D766D /* MAMICareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MAMICareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3B71CE1BC6EBA0001D766D /* MAMICareUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MAMICareUITests.m; sourceTree = "<group>"; };
 		2B3B71D01BC6EBA0001D766D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B49C70E1C02B86700F78C18 /* transition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transition.png; sourceTree = "<group>"; };
 		2B4BB8651BF9A46400900694 /* UsuarioDefault.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UsuarioDefault.png; sourceTree = "<group>"; };
 		2B4BB8671BF9A48200900694 /* nuevaFoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nuevaFoto.png; sourceTree = "<group>"; };
 		2B606D111BFA9A1B00739133 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
@@ -103,9 +125,6 @@
 		2B73E2D01BF86A5100E0B619 /* ViewControllerDetalle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewControllerDetalle.h; path = ../ViewControllerDetalle.h; sourceTree = "<group>"; };
 		2B73E2D11BF86A5100E0B619 /* ViewControllerDetalle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewControllerDetalle.m; path = ../ViewControllerDetalle.m; sourceTree = "<group>"; };
 		2B98FF9A1BFD918300329228 /* cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cake.png; sourceTree = "<group>"; };
-		2BB06CB51C03FC4700BEE309 /* B4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B4.jpg; sourceTree = "<group>"; };
-		2BB06CB71C03FD5700BEE309 /* TerminoConsultaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerminoConsultaViewController.h; sourceTree = "<group>"; };
-		2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerminoConsultaViewController.m; sourceTree = "<group>"; };
 		2BB4ABF41BF92F7900CAD218 /* backgroundAlt.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backgroundAlt.jpg; sourceTree = "<group>"; };
 		2BC2F59F1BF67543008F0FDF /* ViewControllerLoginUsername.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLoginUsername.h; sourceTree = "<group>"; };
 		2BC2F5A01BF67543008F0FDF /* ViewControllerLoginUsername.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLoginUsername.m; sourceTree = "<group>"; };
@@ -136,6 +155,16 @@
 		2BF513221BC784F6002B790B /* orangeDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orangeDot.png; sourceTree = "<group>"; };
 		2BF513231BC784F6002B790B /* blueDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueDot.png; sourceTree = "<group>"; };
 		2BF513261BC78775002B790B /* back.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = back.ico; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		FF316EBB1BFD0DB600626406 /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
+		FF316EBC1BFD0DB600626406 /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		FF316EBD1BFD0DB600626406 /* Consultation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consultation.h; sourceTree = "<group>"; };
+		FF316EBE1BFD0DB600626406 /* Consultation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consultation.m; sourceTree = "<group>"; };
+		FF316EBF1BFD0DB600626406 /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
+		FF316EC01BFD0DB600626406 /* Assessment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assessment.m; sourceTree = "<group>"; };
+		FF316EC11BFD0DB600626406 /* SocialWorker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocialWorker.h; sourceTree = "<group>"; };
+		FF316EC21BFD0DB600626406 /* SocialWorker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocialWorker.m; sourceTree = "<group>"; };
+=======
 		CA0341291BFD8477006F5875 /* MomAssesmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MomAssesmentViewController.h; sourceTree = "<group>"; };
 		CA03412A1BFD8477006F5875 /* MomAssesmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MomAssesmentViewController.m; sourceTree = "<group>"; };
 		CA03412C1BFD89CF006F5875 /* Assessment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Assessment.h; sourceTree = "<group>"; };
@@ -150,15 +179,9 @@
 		CA0CF0B11BE9906B006875F7 /* PatientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientTableViewCell.m; sourceTree = "<group>"; };
 		CA0CF0B41BE9954B006875F7 /* PatientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatientsTableViewController.h; sourceTree = "<group>"; };
 		CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsTableViewController.m; sourceTree = "<group>"; };
-		CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		CABC35441BEBD6F600471AED /* ResultsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableController.h; sourceTree = "<group>"; };
 		CABC35451BEBD6F600471AED /* ResultsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableController.m; sourceTree = "<group>"; };
-		FF4143BE1C02A31F00DB79A1 /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
-		FF4143BF1C02A31F00DB79A1 /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
-		FF4143C51C02B2FC00DB79A1 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
-		FF4143C61C02B2FC00DB79A1 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
-		FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAMICare.sqlite3; sourceTree = "<group>"; };
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +189,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA29E0A21C02BB960095FEBE /* libsqlite3.0.tbd in Frameworks */,
-				CA29E0A01C02BB8E0095FEBE /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,8 +212,6 @@
 		2B3B719D1BC6EB9F001D766D = {
 			isa = PBXGroup;
 			children = (
-				CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */,
-				CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */,
 				2B3B71A81BC6EB9F001D766D /* MAMICare */,
 				2B3B71C21BC6EBA0001D766D /* MAMICareTests */,
 				2B3B71CD1BC6EBA0001D766D /* MAMICareUITests */,
@@ -216,14 +235,27 @@
 				CA0CF0B31BE99075006875F7 /* Custom Tableview Cell */,
 				2B3B71AC1BC6EB9F001D766D /* AppDelegate.h */,
 				2B3B71AD1BC6EB9F001D766D /* AppDelegate.m */,
-				FF4143C51C02B2FC00DB79A1 /* DBManager.h */,
-				FF4143C61C02B2FC00DB79A1 /* DBManager.m */,
-				FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */,
+<<<<<<< HEAD
+				FFABFB651BFB9B7A008098B9 /* ViewControllers */,
+				FFABFB661BFB9B89008098B9 /* Images */,
+=======
 				FF5E17ED1BE990CB009B0F9E /* ViewControllers */,
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 				2B3B71B51BC6EB9F001D766D /* Assets.xcassets */,
 				FF5E17EB1BE990B5009B0F9E /* Models */,
-				2B3B71B21BC6EB9F001D766D /* Main.storyboard */,
 				2B3B71B71BC6EB9F001D766D /* LaunchScreen.storyboard */,
+<<<<<<< HEAD
+				FF316EBB1BFD0DB600626406 /* Patient.h */,
+				FF316EBC1BFD0DB600626406 /* Patient.m */,
+				FF316EBD1BFD0DB600626406 /* Consultation.h */,
+				FF316EBE1BFD0DB600626406 /* Consultation.m */,
+				FF316EBF1BFD0DB600626406 /* Assessment.h */,
+				FF316EC01BFD0DB600626406 /* Assessment.m */,
+				FF316EC11BFD0DB600626406 /* SocialWorker.h */,
+				FF316EC21BFD0DB600626406 /* SocialWorker.m */,
+=======
+				2B3B71B21BC6EB9F001D766D /* Main.storyboard */,
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 				2B3B71BA1BC6EB9F001D766D /* Info.plist */,
 				CAA9827F1BE8574100137E45 /* Images */,
 				2B3B71A91BC6EB9F001D766D /* Supporting Files */,
@@ -257,6 +289,31 @@
 			path = MAMICareUITests;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+		FFABFB651BFB9B7A008098B9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B3B71AF1BC6EB9F001D766D /* ViewController.h */,
+				2B3B71B01BC6EB9F001D766D /* ViewController.m */,
+				2BF513001BC752EB002B790B /* ViewControllerLogin.h */,
+				2BF513011BC752EB002B790B /* ViewControllerLogin.m */,
+				2BF513051BC771A2002B790B /* ViewControllerDashboard.h */,
+				2BF513061BC771A2002B790B /* ViewControllerDashboard.m */,
+				2BF513181BC78169002B790B /* ViewControllerPacientes.h */,
+				2BF513191BC78169002B790B /* ViewControllerPacientes.m */,
+				2BF5131B1BC7817A002B790B /* ViewControllerConsultar.h */,
+				2BF5131C1BC7817A002B790B /* ViewControllerConsultar.m */,
+				2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */,
+				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FFABFB661BFB9B89008098B9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2BF512FE1BC750F2002B790B /* Background.jpg */,
+=======
 		CA0CF0B31BE99075006875F7 /* Custom Tableview Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,7 +326,6 @@
 		CAA9827F1BE8574100137E45 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				2B49C70E1C02B86700F78C18 /* transition.png */,
 				2B98FF9A1BFD918300329228 /* cake.png */,
 				2B606D131BFAD94900739133 /* email.png */,
 				2B606D111BFA9A1B00739133 /* home.png */,
@@ -277,9 +333,9 @@
 				2B4BB8651BF9A46400900694 /* UsuarioDefault.png */,
 				2BF512FE1BC750F2002B790B /* Background.jpg */,
 				2BB4ABF41BF92F7900CAD218 /* backgroundAlt.jpg */,
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 				2BF513031BC76249002B790B /* line.png */,
 				2BF513161BC780ED002B790B /* settings.png */,
-				2BB06CB51C03FC4700BEE309 /* B4.jpg */,
 				2BF513081BC77A63002B790B /* w1.png */,
 				2BF513091BC77A63002B790B /* w2.png */,
 				2BF5130A1BC77A63002B790B /* w3.png */,
@@ -300,11 +356,11 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
+=======
 		FF5E17EB1BE990B5009B0F9E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FF4143BE1C02A31F00DB79A1 /* Address.h */,
-				FF4143BF1C02A31F00DB79A1 /* Address.m */,
 				CA03412C1BFD89CF006F5875 /* Assessment.h */,
 				CA03412D1BFD89CF006F5875 /* Assessment.m */,
 				CA03412E1BFD89CF006F5875 /* Consultation.h */,
@@ -338,12 +394,11 @@
 				2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */,
 				CABC35441BEBD6F600471AED /* ResultsTableController.h */,
 				CABC35451BEBD6F600471AED /* ResultsTableController.m */,
-				2BB06CB71C03FD5700BEE309 /* TerminoConsultaViewController.h */,
-				2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,7 +510,6 @@
 				2BF513041BC76249002B790B /* line.png in Resources */,
 				2B98FF9B1BFD918300329228 /* cake.png in Resources */,
 				2BF513141BC77D42002B790B /* c2.png in Resources */,
-				2BB06CB61C03FC4700BEE309 /* B4.jpg in Resources */,
 				2BF513241BC784F6002B790B /* orangeDot.png in Resources */,
 				2B606D141BFAD94900739133 /* email.png in Resources */,
 				2BF5130F1BC77A63002B790B /* w4.png in Resources */,
@@ -468,7 +522,6 @@
 				2BB4ABF51BF92F7900CAD218 /* backgroundAlt.jpg in Resources */,
 				2BF5130E1BC77A63002B790B /* w3.png in Resources */,
 				2B4BB8681BF9A48200900694 /* nuevaFoto.png in Resources */,
-				FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */,
 				2BD4F1301BCF6A1C007A50C0 /* refresh.png in Resources */,
 				2BF513211BC784AA002B790B /* house.png in Resources */,
 				2BF513131BC77D42002B790B /* c1.png in Resources */,
@@ -476,7 +529,6 @@
 				2BD4F12A1BCF62E5007A50C0 /* newContact.png in Resources */,
 				2BF512FF1BC750F2002B790B /* Background.jpg in Resources */,
 				2BD4F12C1BCF6721007A50C0 /* searchBar.png in Resources */,
-				2B49C70F1C02B86700F78C18 /* transition.png in Resources */,
 				2B3B71B61BC6EB9F001D766D /* Assets.xcassets in Resources */,
 				2BF513171BC780ED002B790B /* settings.png in Resources */,
 				2B3B71B41BC6EB9F001D766D /* Main.storyboard in Resources */,
@@ -506,9 +558,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */,
+<<<<<<< HEAD
+				2BF5131A1BC78169002B790B /* ViewControllerPacientes.m in Sources */,
+				FF316EC61BFD0DB600626406 /* SocialWorker.m in Sources */,
+				FF316EC51BFD0DB600626406 /* Assessment.m in Sources */,
+				2B3B71B11BC6EB9F001D766D /* ViewController.m in Sources */,
+				FF316EC31BFD0DB600626406 /* Patient.m in Sources */,
+				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
+				2B3B71AE1BC6EB9F001D766D /* AppDelegate.m in Sources */,
+				FF316EC41BFD0DB600626406 /* Consultation.m in Sources */,
+=======
 				CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */,
-				FF4143C01C02A31F00DB79A1 /* Address.m in Sources */,
-				FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */,
 				CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */,
 				CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */,
 				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
@@ -516,13 +576,13 @@
 				CA0341351BFD89CF006F5875 /* Consultation.m in Sources */,
 				CA0341341BFD89CF006F5875 /* Assessment.m in Sources */,
 				2BC2F5A11BF67543008F0FDF /* ViewControllerLoginUsername.m in Sources */,
+>>>>>>> 553c2454538e78b91437f6eeb3b41dfdc53979bd
 				2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */,
 				CA03412B1BFD8477006F5875 /* MomAssesmentViewController.m in Sources */,
 				2B73E2D21BF86A5100E0B619 /* ViewControllerDetalle.m in Sources */,
 				CA0341361BFD89CF006F5875 /* Patient.m in Sources */,
 				2BF5131D1BC7817A002B790B /* ViewControllerConsultar.m in Sources */,
 				CA0341371BFD89CF006F5875 /* SocialWorker.m in Sources */,
-				2BB06CB91C03FD5700BEE309 /* TerminoConsultaViewController.m in Sources */,
 				2B3B71AB1BC6EB9F001D766D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

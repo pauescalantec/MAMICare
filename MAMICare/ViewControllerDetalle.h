@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIBarButtonItem *Cancel;
 @property (strong, nonatomic) IBOutlet UIButton *btnStart;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imgPatientImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblFirstName;
 @property (weak, nonatomic) IBOutlet UILabel *lblLastNames;
 @property (weak, nonatomic) IBOutlet UILabel *lblAge;

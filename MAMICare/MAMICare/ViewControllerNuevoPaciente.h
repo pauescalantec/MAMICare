@@ -13,41 +13,30 @@
     UIDatePicker *datePicker;
 }
 
-- (IBAction)botNuevaFoto:(id)sender;
-
+// outlets
 @property (strong, nonatomic) IBOutlet UIButton *outBotNuevaFoto;
-
 @property (strong, nonatomic) IBOutlet UIImageView *outFoto;
-
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *btnSave;
-
 @property (nonatomic, strong) NSString *strSegue;
-
 @property (strong, nonatomic) IBOutlet UIScrollView *outScroller;
-
 @property (nonatomic, strong) UITextField *activeField;
-
 @property (strong, nonatomic) IBOutlet UIView *ChoosePictureMode;
-
 @property (strong, nonatomic) IBOutlet UIButton *btnChoosePhoto;
-
 @property (strong, nonatomic) IBOutlet UIButton *btnTakePhoto;
-
 @property (strong, nonatomic) IBOutlet UIButton *btnCancelar;
-
 @property UIVisualEffect *blurEffect;
-
 @property (nonatomic, strong) NSString *picture;
-
 @property UIVisualEffectView *visualEffectView;
 
+
+// actions
 - (IBAction)takePhoto:(UIButton *)sender;
-
 - (IBAction)choosePhoto:(UIButton *)sender;
-
 - (IBAction)cancelarFoto:(UIButton *)sender;
+- (IBAction)botNuevaFoto:(id)sender;
 
-//text fields
+
+//text fields and iPad position while editing
 @property (strong, nonatomic) IBOutlet UITextField *txtFirstName;
 - (IBAction)txtFNEnd:(UITextField *)sender;
 - (IBAction)txtFNBegin:(UITextField *)sender;

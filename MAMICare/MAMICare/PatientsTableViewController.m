@@ -12,6 +12,7 @@
 #import "ViewControllerDetalle.h"
 #import "ViewControllerNuevoPaciente.h"
 #import "ResultsTableController.h"
+#import "DBManager.h"
 
 @interface PatientsTableViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
 
@@ -36,7 +37,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        Patient *testPatient[5];
+    [[DBManager getSharedInstance] loadAllPatients];
+    self.patients = patientArray;
     
     _resultsTableController = [[ResultsTableController alloc] init];
     _searchController = [[UISearchController alloc]
@@ -51,6 +53,10 @@
     self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
     self.searchController.searchBar.delegate = self; // so we can monitor text changes + others
     self.definesPresentationContext = YES;
+    
+    // reloading the data
+    self.tableView.dataSource = self;
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -121,7 +127,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.patients.count;
+    return patientArray.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -130,17 +136,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
-    Patient *patient = self.patients[indexPath.row];
+    Patient *patient = patientArray[indexPath.row];
     [self configureCell:cell forPatient:patient];
     return cell;
 }
 
 - (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
 # warning Implement configureCell method
-    NSString *photoURL = [NSString stringWithFormat:@"patient_%ld.jpg",
-                          (long)patient.pID];
-    cell.lblPatientName.text = patient.getFullName;
-    cell.imgPatientImage.image = [UIImage imageNamed:photoURL];
+    cell.lblPatientName.text = [NSString stringWithFormat:@"%@ %@",
+                                patient.name, [patient getFullName]];
+    cell.imgPatientImage.image = [UIImage imageNamed:[patient getPhotoURL]];
 }
 
 //
@@ -234,12 +239,15 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
     //detail view controller
     
     if ([[segue identifier] isEqualToString: @"detallePaciente"]) {
-        ViewControllerDetalle *viewPacientes= [segue destinationViewController];
+        ViewControllerDetalle *viewPacientes = [segue destinationViewController];
         viewPacientes.strSegue = self.strSegue;
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Patient *patient = [patientArray objectAtIndex:indexPath.row];
+        [viewPacientes setPatient:patient];
     }
     
     if ([[segue identifier] isEqualToString: @"agregaPaciente"]) {
-        ViewControllerNuevoPaciente *agregaPacientes= [segue destinationViewController];
+        ViewControllerNuevoPaciente *agregaPacientes = [segue destinationViewController];
         agregaPacientes.strSegue = self.strSegue;
     }
     

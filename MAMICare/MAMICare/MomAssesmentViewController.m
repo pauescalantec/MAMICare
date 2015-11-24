@@ -72,10 +72,9 @@
                                   sender:(id)sender {
     // validates all data from the object...
     [self retrieveDataFromFormToAssessment];
-    bool pass=  [self.assessment physicalFieldsCompleted] &&
+    return [self.assessment physicalFieldsCompleted] &&
            [self.assessment chemicalFieldsCompleted] &&
            [self.assessment fetusFieldsCompleted];
-    return pass;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

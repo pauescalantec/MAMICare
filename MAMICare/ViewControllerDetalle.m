@@ -56,8 +56,20 @@
 
 - (void)configureView {
     if (self.patient){
-        //self.imgPatientImage.image = self.patient.photo;
-        //self.lblPatientName.text = [self.patient getFullName];
+        self.imgPatientImage.image = [UIImage imageNamed:[self.patient getPhotoURL]];
+        self.lblFirstName.text = self.patient.name;
+        self.lblLastNames.text = [self.patient getFullName];
+        self.lblAge.text = [NSString stringWithFormat:@"%ld",
+                            (long)[self.patient getAge]];
+        self.lblStreet.text = self.patient.pAddress.addressLine1;
+        self.lblNeighborhood.text = self.patient.pAddress.addressLine2;
+        self.lblCity.text = self.patient.pAddress.city;
+        self.lblState.text = self.patient.pAddress.state;
+        self.lblPostalCode.text = [NSString stringWithFormat:@"%ld",
+                                   (long)self.patient.pAddress.zipCode];
+        self.lblCountry.text = self.patient.pAddress.country;
+        self.lblEmail.text = self.patient.email;
+        self.lblCURP.text = self.patient.curp;
     }
 }
 
