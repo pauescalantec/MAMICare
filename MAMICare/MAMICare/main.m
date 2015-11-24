@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
+#import "SocialWorker.h"
 
 NSMutableArray *patientArray;
+//SocialWorker *currentUser;
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {

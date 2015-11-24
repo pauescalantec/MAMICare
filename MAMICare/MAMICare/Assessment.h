@@ -6,6 +6,7 @@
 //  Copyright © 2015 Natalia Garcia. All rights reserved.
 //
 #import <UIKit/UIKit.h>
+#import "DBManager.h"
 #import <Foundation/Foundation.h>
 
 @interface Assessment : NSObject
@@ -38,5 +39,6 @@
 - (BOOL)physicalFieldsCompleted;
 - (BOOL)chemicalFieldsCompleted;
 - (BOOL)fetusFieldsCompleted;
+- (BOOL)save;
 
 @end

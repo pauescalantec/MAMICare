@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SocialWorker.h"
+
+extern SocialWorker *currentUser;
 
 @interface ViewControllerLogin : UIViewController
 

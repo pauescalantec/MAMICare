@@ -6,6 +6,7 @@
 //  Copyright © 2015 Natalia Garcia. All rights reserved.
 //
 
+#import "DBManager.h"
 #import <Foundation/Foundation.h>
 
 @interface Address : NSObject
@@ -19,5 +20,8 @@
 @property (nonatomic, strong) NSString * country;
 @property NSInteger zipCode;
 @property (nonatomic, strong) NSDate * createdAt;
+
+-(BOOL) save;
+-(id) load;
 
 @end

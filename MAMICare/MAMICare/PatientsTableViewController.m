@@ -37,7 +37,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[DBManager getSharedInstance] loadAllPatients];
+    [Patient loadAllPatients];
     self.patients = patientArray;
     
     _resultsTableController = [[ResultsTableController alloc] init];

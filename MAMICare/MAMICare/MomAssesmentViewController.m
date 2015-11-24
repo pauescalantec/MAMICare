@@ -58,6 +58,8 @@
     self.assessment.contractionsTime = [self.tfContractionsTime.text integerValue];
     //validate for default
     self.assessment.observations = (self.tvObservations.text);
+    
+    [self.assessment save];
 }
 
 #pragma mark - Date Helper Functions

@@ -8,19 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
-#import "Patient.h"
-#import "Address.h"
-#import "Consultation.h"
-extern NSMutableArray *patientArray;
+
 @interface DBManager : NSObject {
         NSString *dbPath;
 }
 
-+ (DBManager*) getSharedInstance;
-- (BOOL) createDB;
-//-(Patient*) readNameAndLastName: (NSString*) idNum;
-- (BOOL) loadAllPatients;
-- (BOOL) createNewPatient: (Patient*) newPatient withAddress: (Address*) newAddress;
-- (BOOL) createNewConsultation: (Consultation*) newConsultation;
-
++(DBManager*) getSharedInstance;
+-(BOOL) createDB;
+-(NSInteger) updateDB: (NSString*) query;
+-(NSInteger) getLastId;
+-(NSMutableDictionary*) queryDB: (NSString*) query;
 @end

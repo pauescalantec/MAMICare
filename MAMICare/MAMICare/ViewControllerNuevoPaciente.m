@@ -111,8 +111,6 @@
     
     [newPatient save];
     
-    // saving the patient in the global array
-    [patientArray addObject:newPatient];
     return newPatient;
 }
 

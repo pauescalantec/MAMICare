@@ -1,5 +1,5 @@
 //
-//  City.h
+//  Patient.h
 //  SPROC-Test
 //
 //  Created by Natalia García on 11/13/15.
@@ -7,6 +7,9 @@
 //
 #import <Foundation/Foundation.h>
 #import "Address.h"
+
+extern NSMutableArray *patientArray;
+
 @interface Patient : NSObject
 
 @property NSInteger pID;
@@ -27,5 +30,7 @@
 - (NSString *)getFullName;
 - (NSInteger)getAge;
 - (NSString *)getPhotoURL;
++ (void) loadAllPatients;
+- (BOOL) save;
 
 @end

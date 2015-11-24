@@ -62,5 +62,15 @@
     return  a && b && d && e;
 }
 
+- (BOOL) save {
+        NSString *querySQL = [NSString stringWithFormat:
+                              @"INSERT INTO Assessment (startTime, pusle, oxygen, systolicHeartRate,diastolicHeartRate, fetalHeartBeat, fetalRegion, urineTest, contractionsExist, contractionsTime, weight, fundalHeight, basalGlucose, observations) VALUES ('%@',%d, %d, %d, %d, %d, %d, %f, %d, %d, %f, %f, %d, '%@')", self.startTime, self.pulse, self.oxygen, self.systolicHeartRate, self.diastolicHeartRate, self.fetalHeartBeat, self.fetalRegion, self.urineTest, self.contractionsExist, self.contractionsTime, self.weight, self.fundalHeight, self.basalGlucose, self.observations];
+        if ([[DBManager getSharedInstance] updateDB:querySQL] > 0) {
+                self.pID = [[DBManager getSharedInstance] getLastId];
+                return YES;
+        }
+        return NO;
+}
+
 @end
 

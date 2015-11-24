@@ -10,4 +10,21 @@
 
 @implementation SocialWorker
 
++ (BOOL)loginwithName: (NSString*) username andPassword: (NSString*) password {
+    NSString *querySQL = [NSString stringWithFormat: @"SELECT id FROM SocialWorker WHERE username = '%@' AND password = '%@'", username, password];
+    if (!currentUser) {
+        currentUser = [[SocialWorker alloc] init];
+    }
+    NSMutableDictionary *resultSet = [[DBManager getSharedInstance] queryDB:querySQL];
+    if ([[resultSet objectForKey:@"id"] firstObject] && ![[[resultSet objectForKey:@"id"] firstObject] isEqualToString:@";"]) {
+        currentUser.pID = [[[resultSet objectForKey:@"id"] firstObject] integerValue];
+        currentUser.username = username;
+        currentUser.password = password;
+        return YES;
+    }
+    return NO;
+}
+
+
+
 @end

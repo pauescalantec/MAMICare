@@ -9,5 +9,12 @@
 #import "Consultation.h"
 
 @implementation Consultation
-
+- (BOOL) save {
+        NSString *querySQL = [NSString stringWithFormat:
+                              @"INSERT INTO Consultation (assessmentID, patientID, socialWorkerID, overallScore) VALUES (%d, %d, %d, %f)", self.assessmentID, self.patientID, self.socialWorkerID, self.overallScore];
+        if ([[DBManager getSharedInstance] updateDB:querySQL] > 0) {
+                return YES;
+        }
+        return NO;
+}
 @end
