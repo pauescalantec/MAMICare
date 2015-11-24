@@ -59,7 +59,7 @@
                         tmpPatient.birthDate = [dateFormat dateFromString:[[resultSet objectForKey:@"birthDate"]objectAtIndex:i]];
                 }
                 if (![[[resultSet objectForKey:@"email"] objectAtIndex:i] isEqualToString: @";"]) {
-                        tmpPatient.email = [resultSet objectForKey:@"email"];
+                    tmpPatient.email = [[resultSet objectForKey:@"email"] objectAtIndex:i];
                 }
                 if (![[[resultSet objectForKey:@"curp"]objectAtIndex:i] isEqualToString: @";"]) {
                         tmpPatient.curp = [[resultSet objectForKey:@"curp"]objectAtIndex:i];
