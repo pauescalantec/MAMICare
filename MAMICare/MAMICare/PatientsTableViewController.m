@@ -12,6 +12,7 @@
 #import "ViewControllerDetalle.h"
 #import "ViewControllerNuevoPaciente.h"
 #import "ResultsTableController.h"
+#import "HelperVC.h"
 #import "DBManager.h"
 
 @interface PatientsTableViewController () <UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating>
@@ -145,7 +146,7 @@
 # warning Implement configureCell method
     cell.lblPatientName.text = [NSString stringWithFormat:@"%@ %@",
                                 patient.name, [patient getFullName]];
-    cell.imgPatientImage.image = [UIImage imageNamed:[patient getPhotoURL]];
+    cell.imgPatientImage.image = [HelperVC getPhotoForUser:patient];
 }
 
 //

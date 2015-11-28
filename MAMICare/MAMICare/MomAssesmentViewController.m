@@ -7,6 +7,7 @@
 //
 
 #import "MomAssesmentViewController.h"
+#import "HelperVC.h"
 
 @interface MomAssesmentViewController ()
 
@@ -32,6 +33,7 @@
     }
     
     [self setStartTime];
+    [self configureUserInfoInView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +42,12 @@
 }
 
 #pragma mark - View Helper Functions
+
+- (void)configureUserInfoInView {
+    self.imgPatientPhoto.image = [HelperVC getPhotoForUser:self.patient];
+    self.lblFirstName.text = self.patient.name;
+    self.lblLastName.text = self.patient.getFullName;
+}
 
 - (void)retrieveDataFromFormToAssessment {
     self.assessment.weight = [self.tffundalHeight.text doubleValue];
@@ -87,6 +95,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // sets the assesment for the next part of the form
     [[segue destinationViewController] setAssessment:self.assessment];
+    [[segue destinationViewController] setPatient:self.patient];
 }
 
 // Remove Keyboard

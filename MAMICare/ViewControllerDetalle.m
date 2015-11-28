@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerDetalle.h"
+#import "HelperVC.h"
 
 @interface ViewControllerDetalle ()
 
@@ -56,7 +57,7 @@
 
 - (void)configureView {
     if (self.patient){
-        self.imgPatientImage.image = [UIImage imageNamed:[self.patient getPhotoURL]];
+        self.imgPatientImage.image = [HelperVC getPhotoForUser:self.patient];
         self.lblFirstName.text = self.patient.name;
         self.lblLastNames.text = [self.patient getFullName];
         self.lblAge.text = [NSString stringWithFormat:@"%ld",
@@ -78,12 +79,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
+    [[segue destinationViewController] setPatient:self.patient];
 }
 
 - (void)btnCancelar:(UIBarButtonItem *)sender {

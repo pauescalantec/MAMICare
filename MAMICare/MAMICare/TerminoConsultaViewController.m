@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self configureUserInfoInView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,6 +33,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - View Helper Functions
+
+- (void)configureUserInfoInView {
+    self.labelFirstName.text = self.patient.name;
+    self.labelFirstName.text = self.patient.getFullName;
+    self.picturePatient.image = [HelperVC getPhotoForUser:self.patient];
+}
 
 - (IBAction)btnMenu:(UIBarButtonItem *)sender {
     [self popView];

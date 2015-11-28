@@ -8,23 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "Assessment.h"
+#import "HelperVC.h" // includes "Patient.h"
 
 @interface TerminoConsultaViewController : UIViewController
 
+// outlets
 @property (strong, nonatomic) IBOutlet UILabel *labelFirstName;
-
 @property (strong, nonatomic) IBOutlet UILabel *labelLastName;
-
 @property (strong, nonatomic) IBOutlet UIImageView *picturePatient;
 
+// actions
 - (IBAction)btnMenu:(UIBarButtonItem *)sender;
 
+// properties
 @property (nonatomic, strong) NSString *strFirstName;
-
 @property (nonatomic, strong) NSString *strLastName;
-
 @property (nonatomic, strong) UIImage *imagePatient;
-
 @property (nonatomic, strong) Assessment *assessment;
+@property (nonatomic, strong) Patient *patient;
 
 @end
