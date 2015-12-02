@@ -24,9 +24,12 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnChoosePhoto;
 @property (strong, nonatomic) IBOutlet UIButton *btnTakePhoto;
 @property (strong, nonatomic) IBOutlet UIButton *btnCancelar;
+
+// properties
 @property UIVisualEffect *blurEffect;
 @property (nonatomic, strong) NSString *picture;
 @property UIVisualEffectView *visualEffectView;
+@property (nonatomic, strong) NSString *patientImageAssetURL; // important
 
 
 // actions
