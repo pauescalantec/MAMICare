@@ -107,7 +107,7 @@
                                        fromDate:self.birthDate
                                        toDate:now
                                        options:0];
-    return [ageComponents year];
+    return 30;// [ageComponents year];
 }
 
 @end

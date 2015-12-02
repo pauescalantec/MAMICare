@@ -38,7 +38,7 @@
 
 - (void)configureUserInfoInView {
     self.labelFirstName.text = self.patient.name;
-    self.labelFirstName.text = self.patient.getFullName;
+    self.labelLastName.text = self.patient.getFullName;
     self.picturePatient.image = [HelperVC getPhotoForUser:self.patient];
 }
 
