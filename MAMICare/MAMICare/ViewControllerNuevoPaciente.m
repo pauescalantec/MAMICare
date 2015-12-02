@@ -66,9 +66,8 @@
 }
 
 -(void)ShowSelectedDate
-{   NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"dd/MMM/YYYY"];
-    self.txtNacimiento.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
+{
+    self.txtNacimiento.text=[NSString stringWithFormat:@"%@",[Patient setDateFormatWithDate:datePicker.date]];
     [self.txtNacimiento resignFirstResponder];
 }
 
@@ -108,6 +107,8 @@
     newPatient.pAddress = addr;
     newPatient.email = self.txtCorreo.text;
     newPatient.curp = self.txtCURP.text;
+    newPatient.birthDate = [Patient setDateFormatWithString:self.txtNacimiento.text];
+    NSLog(newPatient.birthDate);
     
     [newPatient save];
     

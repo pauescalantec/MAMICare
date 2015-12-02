@@ -24,19 +24,6 @@
     patientArray = [[NSMutableArray alloc] init];
     Patient *tmpPatient = [[Patient alloc] init];
     
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateFormat setLocale:[NSLocale currentLocale]];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
-    
-    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
-    NSDateFormatter *timeFormat = [[NSDateFormatter alloc] init];
-    [timeFormat setTimeZone:[NSTimeZone systemTimeZone]];
-    [timeFormat setLocale:[NSLocale currentLocale]];
-    [timeFormat setDateFormat:@"yyyy/mm/dd HH:mm:ss"];
-    [timeFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
-    
     NSString *querySQL = @"SELECT * FROM Patient";
     NSMutableDictionary *resultSet = [[DBManager getSharedInstance] queryDB:querySQL];
     int max = [[resultSet objectForKey:@"id"] count];
@@ -57,7 +44,7 @@
             tmpPatient.lastname2 = [[resultSet objectForKey:@"lastName2"]objectAtIndex:i];
         }
         if (![[[resultSet objectForKey:@"birthDate"] objectAtIndex:i] isEqualToString: @";"]) {
-            tmpPatient.birthDate = [dateFormat dateFromString:[[resultSet objectForKey:@"birthDate"]objectAtIndex:i]];
+            tmpPatient.birthDate = [Patient setDateFormatWithString:[[resultSet objectForKey:@"birthDate"]objectAtIndex:i]];
         }
         if (![[[resultSet objectForKey:@"email"] objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.email = [[resultSet objectForKey:@"email"] objectAtIndex:i];
@@ -108,6 +95,26 @@
                                        toDate:now
                                        options:0];
     return [ageComponents year];
+}
+
++(NSDate *)setDateFormatWithString: (NSString *)date {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormat setLocale:[NSLocale currentLocale]];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
+    return [dateFormat dateFromString: date];
+}
+
++(NSDate *)setDateFormatWithDate: (NSDate *)date {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormat setLocale:[NSLocale currentLocale]];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
+    return [dateFormat dateFromString: [dateFormat stringFromDate: date]];
 }
 
 - (NSString *)getPhotoURL {

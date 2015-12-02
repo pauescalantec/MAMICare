@@ -31,6 +31,8 @@ extern NSMutableArray *patientArray;
 - (NSInteger)getAge;
 - (NSString *)getPhotoURL;
 + (void) loadAllPatients;
++(NSDate*) setDateFormatWithDate: (NSDate*)date;
++ (NSDate*) setDateFormatWithString: (NSString*) date;
 - (BOOL) save;
 
 @end
