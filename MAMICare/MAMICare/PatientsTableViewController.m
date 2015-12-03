@@ -40,24 +40,6 @@
     [super viewDidLoad];
     [Patient loadAllPatients];
     self.patients = patientArray;
-    
-    _resultsTableController = [[ResultsTableController alloc] init];
-    _searchController = [[UISearchController alloc]
-                         initWithSearchResultsController:self.resultsTableController];
-    self.searchController.searchResultsUpdater = self;
-    [self.searchController.searchBar sizeToFit];
-    self.tableView.tableHeaderView = self.searchController.searchBar;
-    
-    // we want to be the delegate for our filtered table so didSelectRowAtIndexPath is called for both tables
-    self.resultsTableController.tableView.delegate = self;
-    self.searchController.delegate = self;
-    self.searchController.dimsBackgroundDuringPresentation = NO; // default is YES
-    self.searchController.searchBar.delegate = self; // so we can monitor text changes + others
-    self.definesPresentationContext = YES;
-    
-    // reloading the data
-    self.tableView.dataSource = self;
-    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -139,6 +121,7 @@
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
     Patient *patient = patientArray[indexPath.row];
     [self configureCell:cell forPatient:patient withIndex:indexPath.row];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     return cell;
 }
 
@@ -167,14 +150,9 @@
     cell.imgPatientImage.image = [HelperVC getPhotoForUser:patient];
 }
 
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    Patient *selectedPatient = (tableView == self.tableView) ?
-//        self.patients[indexPath.row] : self.resultsTableController.filteredPatients[indexPath.row];
-//    ViewControllerDetalle *detailViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
-//    detailViewController.patient = selectedPatient; // hand off the current product to the detail view controller
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {    
+//    
 //}
 
 #pragma mark - UISearchResultsUpdating

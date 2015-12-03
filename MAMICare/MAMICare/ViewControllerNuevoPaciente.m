@@ -23,6 +23,9 @@
     
     self.picture = @"";
     
+    self.Cancel = [[UIBarButtonItem alloc] initWithTitle:@"Regresar a Menú Principal" style:UIBarButtonItemStylePlain target:self action:@selector(btnCancelar:)];
+    [self.navigationItem setLeftBarButtonItem:self.Cancel animated:YES];
+    
     datePicker = [[UIDatePicker alloc]init];
     datePicker.datePickerMode = UIDatePickerModeDate;
     [self.txtNacimiento setInputView:datePicker];
@@ -67,10 +70,7 @@
 }
 
 -(void)ShowSelectedDate
-{   NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"dd/MMM/YYYY"];
-    self.txtNacimiento.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
-    [self.txtNacimiento resignFirstResponder];
+{   
 }
 
 #pragma mark - Navigation
@@ -637,5 +637,14 @@
         //turn to color black
         self.txtCURP.textColor = [UIColor blackColor];
     }
+}
+
+
+- (void)btnCancelar:(UIBarButtonItem *)sender {
+    [self popView];
+}
+
+- (void) popView {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 @end

@@ -33,4 +33,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *viewNormal;
 
+- (IBAction)credits:(UIButton *)sender;
+
 @end

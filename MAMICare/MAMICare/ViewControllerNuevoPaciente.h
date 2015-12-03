@@ -30,6 +30,7 @@
 @property UIVisualEffectView *visualEffectView;
 @property (nonatomic, strong) NSString *patientImageAssetURL; // important
 
+@property (nonatomic, strong) UIBarButtonItem *Cancel;
 
 // actions
 - (IBAction)takePhoto:(UIButton *)sender;

@@ -76,4 +76,16 @@
     
     [self presentViewController:add animated:YES completion:nil];
 }
+
+- (IBAction)credits:(UIButton *)sender {
+    //alert error
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Creadores"
+                                                                   message:@"MAMICare ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Agosto Diciembre de 2015 como parte del curso Proyecto de Desarrollo de Dispositivos Móviles y asesorados por la Maestra Yolanda Martínez Treviño. \n \n Desarrolladores: \n Luis Lamadrid \n Paulina Escalante \n Natalia García"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 @end
