@@ -87,6 +87,7 @@
         ViewControllerDetalle *patientView = [segue destinationViewController];
         patientView.strSegue = self.strSegue;
         patientView.strNuevo = @"Nuevo";
+        patientView.imageTaken = self.outFoto.image;
         
         // TODO: completar este método
         Patient *newPatient = [self savePatient];

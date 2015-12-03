@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.picturePatient.layer.cornerRadius = self.picturePatient.frame.size.width/2;
+    self.picturePatient.layer.masksToBounds = YES;
     [self configureUserInfoInView];
 }
 
@@ -34,7 +36,7 @@
     // sets the assesment for the next part of the form
     [[segue destinationViewController] setAssessment:self.assessment];
     [[segue destinationViewController] setPatient:self.patient];
-
+    [[segue destinationViewController] setImageTaken:self.imageTaken];
 }
 
 
@@ -43,7 +45,8 @@
 - (void)configureUserInfoInView {
     self.labelFirstName.text = self.patient.name;
     self.labelLastName.text = self.patient.getFullName;
-    self.picturePatient.image = [HelperVC getPhotoForUser:self.patient];
+    self.picturePatient.image = self.imageTaken;
+    //self.picturePatient.image = [HelperVC getPhotoForUser:self.patient];
 }
 
 - (IBAction)btnMenu:(UIBarButtonItem *)sender {

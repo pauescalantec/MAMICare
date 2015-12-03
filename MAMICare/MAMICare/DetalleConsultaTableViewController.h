@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *imagePaciente;
 
+@property (nonatomic, strong) UIImage *imageTaken;
+
 //@property (strong, nonatomic) UIButton *verObservaciones;
 
 @property (nonatomic, strong) Assessment *assessment;

@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.imgPatientImage.layer.cornerRadius = self.imgPatientImage.frame.size.width/2;
+    self.imgPatientImage.layer.masksToBounds = YES;
+    
     // Si es consulta, add consult button
     if ([self.strSegue isEqualToString:@"consultarPacientes"]){
         self.btnStart.hidden = NO;
@@ -57,7 +60,7 @@
 
 - (void)configureView {
     if (self.patient){
-        self.imgPatientImage.image = [HelperVC getPhotoForUser:self.patient];
+        self.imgPatientImage.image = self.imageTaken;
         self.lblFirstName.text = self.patient.name;
         self.lblLastNames.text = [self.patient getFullName];
         self.lblAge.text = [NSString stringWithFormat:@"%ld", (long)[self.patient getAge]];
@@ -83,6 +86,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [[segue destinationViewController] setPatient:self.patient];
+    [[segue destinationViewController] setImageTaken:self.imageTaken];
 }
 
 - (void)btnCancelar:(UIBarButtonItem *)sender {

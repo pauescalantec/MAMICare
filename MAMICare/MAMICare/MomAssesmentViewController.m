@@ -18,6 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.imgPatientPhoto.layer.cornerRadius = self.imgPatientPhoto.frame.size.width/2;
+    self.imgPatientPhoto.layer.masksToBounds = YES;
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(removeKb)];
     [self.view addGestureRecognizer:tap];
     
@@ -44,7 +47,8 @@
 #pragma mark - View Helper Functions
 
 - (void)configureUserInfoInView {
-    [self.imgPatientPhoto setImage:[HelperVC getPhotoForUser:self.patient]];
+    self.imgPatientPhoto.image = self.imageTaken;
+    //[self.imgPatientPhoto setImage:[HelperVC getPhotoForUser:self.patient]];
     self.lblFirstName.text = self.patient.name;
     self.lblLastName.text = self.patient.getFullName;
 }
@@ -96,6 +100,7 @@
     // sets the assesment for the next part of the form
     [[segue destinationViewController] setAssessment:self.assessment];
     [[segue destinationViewController] setPatient:self.patient];
+    [[segue destinationViewController] setImageTaken:self.imageTaken];
 }
 
 // Remove Keyboard

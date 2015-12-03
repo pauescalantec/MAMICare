@@ -240,7 +240,10 @@ NSString *const SearchBarIsFirstResponderKey = @"SearchBarIsFirstResponderKey";
         viewPacientes.strSegue = self.strSegue;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Patient *patient = [patientArray objectAtIndex:indexPath.row];
+        NSString *defaultURL = @"UsuarioDefault";
+        [[segue destinationViewController] setImageTaken:[UIImage imageNamed:defaultURL]];
         [viewPacientes setPatient:patient];
+        
     }
     
     if ([[segue identifier] isEqualToString: @"agregaPaciente"]) {

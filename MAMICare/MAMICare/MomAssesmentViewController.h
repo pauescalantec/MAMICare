@@ -14,6 +14,7 @@
 // attributes
 @property(nonatomic, strong) Patient *patient;
 @property(nonatomic, strong) Assessment *assessment;
+@property (nonatomic, strong) UIImage *imageTaken;
 
 // outlets
 @property(nonatomic, strong) IBOutlet UIImageView *imgPatientPhoto;

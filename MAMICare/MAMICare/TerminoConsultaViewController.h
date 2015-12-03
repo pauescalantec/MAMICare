@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *labelLastName;
 @property (strong, nonatomic) IBOutlet UIImageView *picturePatient;
 
+@property (nonatomic, strong) UIImage *imageTaken;
+
 // actions
 - (IBAction)btnMenu:(UIBarButtonItem *)sender;
 

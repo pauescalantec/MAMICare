@@ -15,6 +15,7 @@
 @property (nonatomic, strong) Patient *patient;
 @property (nonatomic, strong) NSString *strSegue;
 @property (nonatomic, strong) NSString *strNuevo;
+@property (nonatomic, strong) UIImage *imageTaken;
 @property (nonatomic, strong) UIBarButtonItem *Cancel;
 @property (strong, nonatomic) IBOutlet UIButton *btnStart;
 

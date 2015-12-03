@@ -22,10 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.imagePaciente.layer.cornerRadius = self.imagePaciente.frame.size.width/2;
+    self.imagePaciente.layer.masksToBounds = YES;
+    
     //Configure user
     self.lblFirst.text = self.patient.name;
     self.lblLast.text = self.patient.getFullName;
-    self.imagePaciente.image = [HelperVC getPhotoForUser:self.patient];
+    self.imagePaciente.image = self.imageTaken;
+    //self.imagePaciente.image = [HelperVC getPhotoForUser:self.patient];
     
     FieldConsulta *f1 = [[FieldConsulta alloc] initWithField:@"Peso"
                             dato:[NSString stringWithFormat: @"%.2f", self.assessment.weight]];
