@@ -70,6 +70,7 @@
         self.lblCountry.text = self.patient.pAddress.country;
         self.lblEmail.text = self.patient.email;
         self.lblCURP.text = self.patient.curp;
+        [self.patient loadAllAssessments];
     }
 }
 

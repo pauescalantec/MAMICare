@@ -35,7 +35,6 @@ extern NSMutableArray *patientArray;
 - (void)setBirthDateFromString:(NSString *)strDate;
 - (NSString *)getStringBirthDate;
 - (BOOL) save;
-- (NSString *)getStringBirthDate;
-- (void)setBirthDateFromString:(NSString *)strDate;
+-(NSMutableArray*) loadAllAssessments;
 
 @end

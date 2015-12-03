@@ -78,9 +78,7 @@ static sqlite3_stmt *statement = nil;
             NSLog(@"Error: %@", error);
         }
     }
-    
     dbPath = targetPath;
-    
         BOOL isSuccess = YES;
         NSFileManager *filemgr = [NSFileManager defaultManager];
         NSLog(dbPath);
