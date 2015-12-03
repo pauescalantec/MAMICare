@@ -25,6 +25,11 @@
     if ([self.strSegue isEqualToString:@"consultarPacientes"]){
         self.btnStart.hidden = NO;
         self.btnShadow.hidden = NO;
+        self.btnStart.enabled = YES;
+        
+        self.btnHistorial.hidden = YES;
+        self.btnHistShadow.hidden = YES;
+        self.btnHistorial.enabled = NO;
         
         //check if patient is new
         if ([self.strNuevo isEqualToString:@"Nuevo"]){
@@ -38,6 +43,11 @@
     else {
         self.btnStart.hidden = YES;
         self.btnShadow.hidden = YES;
+        self.btnStart.enabled = NO;
+        
+        self.btnHistorial.hidden = NO;
+        self.btnHistShadow.hidden = NO;
+        self.btnHistorial.enabled = YES;
         
         //check if patient is new
         if ([self.strNuevo isEqualToString:@"Nuevo"]){

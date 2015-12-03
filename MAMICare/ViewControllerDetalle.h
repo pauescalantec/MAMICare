@@ -41,4 +41,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *btnShadow;
 
+@property (strong, nonatomic) IBOutlet UIButton *btnHistorial;
+
+@property (strong, nonatomic) IBOutlet UILabel *btnHistShadow;
+
 @end
