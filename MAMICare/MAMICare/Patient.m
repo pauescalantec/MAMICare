@@ -164,7 +164,8 @@
             tmpPatient.lastname2 = [[resultSet objectForKey:@"lastName2"]objectAtIndex:i];
         }
         if (![[[resultSet objectForKey:@"birthDate"] objectAtIndex:i] isEqualToString: @";"]) {
-            [tmpPatient setBirthDateFromString:[[resultSet objectForKey:@"birthDate"] objectAtIndex:i]];
+            NSString *bd = [[resultSet objectForKey:@"birthDate"] objectAtIndex:i];
+            [tmpPatient setBirthDateFromString: [bd substringToIndex:10]];
         }
         if (![[[resultSet objectForKey:@"email"] objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.email = [[resultSet objectForKey:@"email"] objectAtIndex:i];
