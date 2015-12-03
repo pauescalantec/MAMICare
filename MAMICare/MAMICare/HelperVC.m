@@ -7,6 +7,7 @@
 //
 
 #import "HelperVC.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface HelperVC ()
 
@@ -27,10 +28,27 @@
 #pragma mark - User Helper Functions
 
 + (UIImage *)getPhotoForUser:(Patient *)patient {
-    NSString *photoURL = [patient getPhotoURL];
+
+    __block UIImage *patientPhoto;
     NSString *defaultURL = @"UsuarioDefault";
-    UIImage *patientPhoto = [UIImage imageNamed:photoURL];
+    NSURL *refURL = [NSURL URLWithString:patient.imageAssetURL];
+    
+    // block to call when we get the asset based on the url (below)
+    ALAssetsLibraryAssetForURLResultBlock resultblock = ^(ALAsset *imageAsset) {
+        patientPhoto = [self imageFromAsset:imageAsset];
+    };
+    // get the asset library and fetch the asset based on the ref url (pass in block above)
+    ALAssetsLibrary* assetslibrary = [[ALAssetsLibrary alloc] init];
+    [assetslibrary assetForURL:refURL resultBlock:resultblock failureBlock:nil];
+
     return (patientPhoto) ? patientPhoto : [UIImage imageNamed:defaultURL];
+}
+
++ (UIImage *)imageFromAsset:(ALAsset *)asset {
+    ALAssetRepresentation *representation = [asset defaultRepresentation];
+    return [UIImage imageWithCGImage:representation.fullResolutionImage
+                               scale:[representation scale]
+                         orientation:(UIImageOrientation)[representation orientation]];
 }
 
 /*

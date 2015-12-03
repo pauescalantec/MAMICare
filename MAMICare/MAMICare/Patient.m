@@ -107,11 +107,7 @@
                                        fromDate:self.birthDate
                                        toDate:now
                                        options:0];
-    return [ageComponents year];
-}
-
-- (NSString *)getPhotoURL {
-    return [NSString stringWithFormat:@"patient_%ld.png", (long)self.pID];
+    return 30;// [ageComponents year];
 }
 
 @end

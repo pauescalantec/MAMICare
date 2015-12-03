@@ -138,14 +138,32 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PatientTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PatientCell" forIndexPath:indexPath];
     Patient *patient = patientArray[indexPath.row];
-    [self configureCell:cell forPatient:patient];
+    [self configureCell:cell forPatient:patient withIndex:indexPath.row];
     return cell;
 }
 
-- (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient {
+- (void)configureCell:(PatientTableViewCell *)cell forPatient:(Patient *)patient
+            withIndex:(NSInteger)index{
 # warning Implement configureCell method
     cell.lblPatientName.text = [NSString stringWithFormat:@"%@ %@",
                                 patient.name, [patient getFullName]];
+    
+    // start babies delivered loops
+    int numBabies = [cell.lblBabiesCollection count];
+    int i = 0;
+    for (; i <= index; i++) {
+        [cell.lblBabiesCollection[i] setHidden:NO];
+        [cell.lblBabiesCollection[i] layer].cornerRadius = 8.0;
+        [cell.lblBabiesCollection[i] layer].masksToBounds = YES;
+        [cell.lblVisitsCollection[i] setHidden:NO];
+        [cell.lblVisitsCollection[i] layer].cornerRadius = 8.0;
+        [cell.lblVisitsCollection[i] layer].masksToBounds = YES;
+    }
+    for (; i < numBabies; i++) {
+        [cell.lblBabiesCollection[i] setHidden:YES];
+        [cell.lblVisitsCollection[i] setHidden:YES];
+    }
+    
     cell.imgPatientImage.image = [HelperVC getPhotoForUser:patient];
 }
 

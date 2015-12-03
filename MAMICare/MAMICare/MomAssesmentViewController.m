@@ -44,7 +44,7 @@
 #pragma mark - View Helper Functions
 
 - (void)configureUserInfoInView {
-    self.imgPatientPhoto.image = [HelperVC getPhotoForUser:self.patient];
+    [self.imgPatientPhoto setImage:[HelperVC getPhotoForUser:self.patient]];
     self.lblFirstName.text = self.patient.name;
     self.lblLastName.text = self.patient.getFullName;
 }

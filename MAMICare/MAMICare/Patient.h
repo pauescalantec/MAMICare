@@ -24,12 +24,13 @@ extern NSMutableArray *patientArray;
 @property BOOL isActive;
 @property (nonatomic, strong) NSDate * createdAt;
 
+// special property for image
+@property (nonatomic, strong) NSString * imageAssetURL;
 
 //methods
 - (id) initWithID: (NSInteger) pID andName: (NSString *) name andLastName: (NSString *) lastname1;
 - (NSString *)getFullName;
 - (NSInteger)getAge;
-- (NSString *)getPhotoURL;
 + (void) loadAllPatients;
 - (BOOL) save;
 
