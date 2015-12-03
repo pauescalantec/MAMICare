@@ -70,7 +70,21 @@ static sqlite3_stmt *statement = nil;
 }
 
 -(BOOL)createDB {
-        dbPath = [[NSBundle mainBundle] pathForResource:@"MAMICare" ofType:@"sqlite3"];
+    NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *targetPath = [libraryPath stringByAppendingPathComponent:@"MAMICare.sqlite3"];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:targetPath]) {
+        // database doesn't exist in your library path... copy it from the bundle
+        NSString *sourcePath = [[NSBundle mainBundle] pathForResource:@"MAMICare" ofType:@"sqlite3"];
+        NSError *error = nil;
+        
+        if (![[NSFileManager defaultManager] copyItemAtPath:sourcePath toPath:targetPath error:&error]) {
+            NSLog(@"Error: %@", error);
+        }
+    }
+    
+    dbPath = targetPath;
+    
         BOOL isSuccess = YES;
         NSFileManager *filemgr = [NSFileManager defaultManager];
         NSLog(@"the path should be next");

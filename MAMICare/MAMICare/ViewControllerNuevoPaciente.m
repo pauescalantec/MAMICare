@@ -69,8 +69,12 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)ShowSelectedDate
-{   
+-(void)ShowSelectedDate{
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    self.txtNacimiento.text = [NSString stringWithFormat:@"%@",
+                               [formatter stringFromDate:datePicker.date]];
+    [self.txtNacimiento resignFirstResponder];
 }
 
 #pragma mark - Navigation
@@ -110,6 +114,7 @@
     newPatient.email = self.txtCorreo.text;
     newPatient.curp = self.txtCURP.text;
     newPatient.imageAssetURL = self.patientImageAssetURL; // new
+    [newPatient setBirthDateFromString:self.txtNacimiento.text];
     
     [newPatient save];
     

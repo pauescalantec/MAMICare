@@ -57,7 +57,9 @@
             tmpPatient.lastname2 = [[resultSet objectForKey:@"lastName2"]objectAtIndex:i];
         }
         if (![[[resultSet objectForKey:@"birthDate"] objectAtIndex:i] isEqualToString: @";"]) {
-            tmpPatient.birthDate = [dateFormat dateFromString:[[resultSet objectForKey:@"birthDate"]objectAtIndex:i]];
+            NSString *dateString = [[resultSet objectForKey:@"birthDate"] objectAtIndex:i];
+            dateString = [dateString substringToIndex:10];
+            tmpPatient.birthDate = [dateFormat dateFromString:dateString];
         }
         if (![[[resultSet objectForKey:@"email"] objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.email = [[resultSet objectForKey:@"email"] objectAtIndex:i];
@@ -107,7 +109,22 @@
                                        fromDate:self.birthDate
                                        toDate:now
                                        options:0];
-    return 30;// [ageComponents year];
+    return [ageComponents year];
+}
+
+- (NSString *)getStringBirthDate {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    return [dateFormat stringFromDate:self.birthDate];
+}
+
+- (void)setBirthDateFromString:(NSString *)strDate {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormat setLocale:[NSLocale currentLocale]];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
+    self.birthDate = [dateFormat dateFromString:strDate];
 }
 
 @end
