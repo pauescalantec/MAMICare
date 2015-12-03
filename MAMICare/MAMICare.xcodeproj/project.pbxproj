@@ -30,6 +30,9 @@
 		2BD4F12E1BCF67C2007A50C0 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12D1BCF67C2007A50C0 /* camera.png */; };
 		2BD4F1301BCF6A1C007A50C0 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BD4F12F1BCF6A1C007A50C0 /* refresh.png */; };
 		2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */; };
+		2BDD291C1C0FF069008699C2 /* DetalleConsultaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD291B1C0FF069008699C2 /* DetalleConsultaTableViewController.m */; };
+		2BDD291F1C0FF4CC008699C2 /* ConsultaCustomTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD291E1C0FF4CC008699C2 /* ConsultaCustomTableCell.m */; };
+		2BDD29221C0FF728008699C2 /* FieldConsulta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BDD29211C0FF728008699C2 /* FieldConsulta.m */; };
 		2BF512FF1BC750F2002B790B /* Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2BF512FE1BC750F2002B790B /* Background.jpg */; };
 		2BF513021BC752EB002B790B /* ViewControllerLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF513011BC752EB002B790B /* ViewControllerLogin.m */; };
 		2BF513041BC76249002B790B /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BF513031BC76249002B790B /* line.png */; };
@@ -116,6 +119,12 @@
 		2BD4F12F1BCF6A1C007A50C0 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		2BD8E5B31BD9E77300A0DAEC /* ViewControllerNuevoPaciente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerNuevoPaciente.h; sourceTree = "<group>"; };
 		2BD8E5B41BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerNuevoPaciente.m; sourceTree = "<group>"; };
+		2BDD291A1C0FF069008699C2 /* DetalleConsultaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetalleConsultaTableViewController.h; sourceTree = "<group>"; };
+		2BDD291B1C0FF069008699C2 /* DetalleConsultaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetalleConsultaTableViewController.m; sourceTree = "<group>"; };
+		2BDD291D1C0FF4CC008699C2 /* ConsultaCustomTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultaCustomTableCell.h; sourceTree = "<group>"; };
+		2BDD291E1C0FF4CC008699C2 /* ConsultaCustomTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultaCustomTableCell.m; sourceTree = "<group>"; };
+		2BDD29201C0FF728008699C2 /* FieldConsulta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FieldConsulta.h; sourceTree = "<group>"; };
+		2BDD29211C0FF728008699C2 /* FieldConsulta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FieldConsulta.m; sourceTree = "<group>"; };
 		2BF512FE1BC750F2002B790B /* Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Background.jpg; sourceTree = "<group>"; };
 		2BF513001BC752EB002B790B /* ViewControllerLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerLogin.h; sourceTree = "<group>"; };
 		2BF513011BC752EB002B790B /* ViewControllerLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerLogin.m; sourceTree = "<group>"; };
@@ -306,6 +315,8 @@
 		FF5E17EB1BE990B5009B0F9E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2BDD29201C0FF728008699C2 /* FieldConsulta.h */,
+				2BDD29211C0FF728008699C2 /* FieldConsulta.m */,
 				FF4143BE1C02A31F00DB79A1 /* Address.h */,
 				FF4143BF1C02A31F00DB79A1 /* Address.m */,
 				CA03412C1BFD89CF006F5875 /* Assessment.h */,
@@ -345,6 +356,10 @@
 				CABC35451BEBD6F600471AED /* ResultsTableController.m */,
 				2BB06CB71C03FD5700BEE309 /* TerminoConsultaViewController.h */,
 				2BB06CB81C03FD5700BEE309 /* TerminoConsultaViewController.m */,
+				2BDD291A1C0FF069008699C2 /* DetalleConsultaTableViewController.h */,
+				2BDD291B1C0FF069008699C2 /* DetalleConsultaTableViewController.m */,
+				2BDD291D1C0FF4CC008699C2 /* ConsultaCustomTableCell.h */,
+				2BDD291E1C0FF4CC008699C2 /* ConsultaCustomTableCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -516,13 +531,16 @@
 				FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */,
 				CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */,
 				CA0CF0B21BE9906B006875F7 /* PatientTableViewCell.m in Sources */,
+				2BDD291C1C0FF069008699C2 /* DetalleConsultaTableViewController.m in Sources */,
 				2BF513071BC771A2002B790B /* ViewControllerDashboard.m in Sources */,
+				2BDD29221C0FF728008699C2 /* FieldConsulta.m in Sources */,
 				2B3B71AE1BC6EB9F001D766D /* AppDelegate.m in Sources */,
 				CA0341351BFD89CF006F5875 /* Consultation.m in Sources */,
 				CA0341341BFD89CF006F5875 /* Assessment.m in Sources */,
 				CA4E17ED1C092EF100B588F9 /* HelperVC.m in Sources */,
 				2BC2F5A11BF67543008F0FDF /* ViewControllerLoginUsername.m in Sources */,
 				2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */,
+				2BDD291F1C0FF4CC008699C2 /* ConsultaCustomTableCell.m in Sources */,
 				CA03412B1BFD8477006F5875 /* MomAssesmentViewController.m in Sources */,
 				2B73E2D21BF86A5100E0B619 /* ViewControllerDetalle.m in Sources */,
 				CA0341361BFD89CF006F5875 /* Patient.m in Sources */,
