@@ -149,11 +149,12 @@
             tmpAssessment.observations = [[resultSet objectForKey:@"observations"] objectAtIndex:i];
         }
         
-        if (![[[resultSet objectForKey:@"createdAt"]objectAtIndex:i] isEqualToString: @";"]) {
-            NSString *epochString  = [[resultSet objectForKey:@"createdAt"]objectAtIndex:i];
+        if (![[[resultSet objectForKey:@"lastModified"]objectAtIndex:i] isEqualToString: @";"]) {
+            NSString *epochString  = [[resultSet objectForKey:@"lastModified"]objectAtIndex:i];
             epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
             NSTimeInterval seconds = [epochString doubleValue];
             tmpAssessment.lastModified = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+            NSLog(tmpAssessment.lastModified);
         }
         [assessmentArray addObject:tmpAssessment];
         tmpAssessment = [[Assessment alloc] init];

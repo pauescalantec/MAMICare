@@ -124,11 +124,15 @@
             tmpAssessment.observations = [[resultSet objectForKey:@"observations"] objectAtIndex:i];
         }
         
-        if (![[[resultSet objectForKey:@"createdAt"]objectAtIndex:i] isEqualToString: @";"]) {
-            NSString *epochString  = [[resultSet objectForKey:@"createdAt"]objectAtIndex:i];
-            epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
-            NSTimeInterval seconds = [epochString doubleValue];
-            tmpAssessment.lastModified = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+        if (![[[resultSet objectForKey:@"lastModified"]objectAtIndex:i] isEqualToString: @";"]) {
+            NSString *epochString  = [[resultSet objectForKey:@"lastModified"]objectAtIndex:i];
+            NSDateFormatter *df = [[NSDateFormatter alloc] init];
+            [df setTimeZone:[NSTimeZone systemTimeZone]];
+            [df setLocale:[NSLocale currentLocale]];
+            [df setDateFormat:@"yyyy-MM-dd"];
+            [df setFormatterBehavior:NSDateFormatterBehaviorDefault];
+            [df setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
+            tmpAssessment.lastModified = [df dateFromString:[epochString substringToIndex:10]];
         }
         [assessmentArray addObject:tmpAssessment];
         tmpAssessment = [[Assessment alloc] init];
