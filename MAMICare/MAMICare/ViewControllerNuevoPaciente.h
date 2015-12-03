@@ -10,7 +10,7 @@
 
 @interface ViewControllerNuevoPaciente : UIViewController
 <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate> {
-    UIDatePicker *datePicker;
+    UIDatePicker *datePicker;}
 
 // outlets
 @property (strong, nonatomic) IBOutlet UIButton *outBotNuevaFoto;
