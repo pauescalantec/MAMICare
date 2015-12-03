@@ -43,9 +43,9 @@
     NSString *strAssessmentID = [[NSString alloc] init];
     NSString *fmt = @" (";
     NSMutableString *query = [[NSMutableString alloc] init];
-    [query appendString:@"SELECT * FROM Assessment WHERE assessmentID IN "];
+    [query appendString:@"SELECT * FROM Assessment WHERE id IN ("];
     for(int i = 0; i < [assessmentIDArray count]; i++) {
-        fmt = (i < [assessmentIDArray count]) ? @"%d, " : @"%d";
+        fmt = (i < [assessmentIDArray count]-1) ? @"%d, " : @"%d";
         strAssessmentID = [NSString stringWithFormat:fmt, [[assessmentIDArray objectAtIndex:i] integerValue]];
         [query appendString: strAssessmentID];
     }
@@ -215,7 +215,19 @@
     return [ageComponents year];
 }
 
-
+- (NSString *)getStringBirthDate {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    return [dateFormat stringFromDate:self.birthDate];
+}
+- (void)setBirthDateFromString:(NSString *)strDate {
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
+    [dateFormat setLocale:[NSLocale currentLocale]];
+    [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
+    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
+    self.birthDate = [dateFormat dateFromString:strDate];
+}
 
 - (NSString *)getPhotoURL {
     return [NSString stringWithFormat:@"patient_%ld.png", (long)self.pID];
