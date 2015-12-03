@@ -16,6 +16,10 @@
 @property(nonatomic, strong) Assessment *assessment;
 
 // outlets
+@property(nonatomic, strong) IBOutlet UIImageView *imgPatientPhoto;
+@property(nonatomic, strong) IBOutlet UILabel *lblFirstName;
+@property(nonatomic, strong) IBOutlet UILabel *lblLastName;
+
 @property(nonatomic, strong) UITextField *tfWeight;
 @property(nonatomic, strong) UITextField *tfPulse;
 @property(nonatomic, strong) UITextField *tfSystolicHeartRate;

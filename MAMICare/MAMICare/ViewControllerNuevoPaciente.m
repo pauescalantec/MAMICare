@@ -6,6 +6,7 @@
 //  Copyright © 2015 Paulina´s. All rights reserved.
 //
 
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "ViewControllerNuevoPaciente.h"
 #import "ViewControllerDetalle.h"
 #import "DBManager.h"
@@ -107,8 +108,7 @@
     newPatient.pAddress = addr;
     newPatient.email = self.txtCorreo.text;
     newPatient.curp = self.txtCURP.text;
-    newPatient.birthDate = [Patient setDateFormatWithString:self.txtNacimiento.text];
-    NSLog(newPatient.birthDate);
+    newPatient.imageAssetURL = self.patientImageAssetURL; // new
     
     [newPatient save];
     
@@ -216,6 +216,11 @@
     if ([picker sourceType] == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(self.outFoto.image, nil, nil, nil);
     }
+    
+    
+    // get the ref url of the picked user image
+    NSURL *refURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+    self.patientImageAssetURL = [refURL absoluteString];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     

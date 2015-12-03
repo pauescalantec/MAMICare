@@ -55,6 +55,7 @@
 		CA0CF0B61BE9954B006875F7 /* PatientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */; };
 		CA29E0A01C02BB8E0095FEBE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */; };
 		CA29E0A21C02BB960095FEBE /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */; };
+		CA4E17ED1C092EF100B588F9 /* HelperVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4E17EC1C092EF100B588F9 /* HelperVC.m */; };
 		CABC35461BEBD6F600471AED /* ResultsTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CABC35451BEBD6F600471AED /* ResultsTableController.m */; };
 		FF2353DE1C0924EC0049AE77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF2353DD1C0924EC0049AE77 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		FF4143C01C02A31F00DB79A1 /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143BF1C02A31F00DB79A1 /* Address.m */; };
@@ -150,6 +151,8 @@
 		CA0CF0B51BE9954B006875F7 /* PatientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PatientsTableViewController.m; sourceTree = "<group>"; };
 		CA29E09F1C02BB8E0095FEBE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		CA29E0A11C02BB960095FEBE /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		CA4E17EB1C092EF100B588F9 /* HelperVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperVC.h; sourceTree = "<group>"; };
+		CA4E17EC1C092EF100B588F9 /* HelperVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperVC.m; sourceTree = "<group>"; };
 		CABC35441BEBD6F600471AED /* ResultsTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsTableController.h; sourceTree = "<group>"; };
 		CABC35451BEBD6F600471AED /* ResultsTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsTableController.m; sourceTree = "<group>"; };
 		FF2353DD1C0924EC0049AE77 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 		FF5E17ED1BE990CB009B0F9E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CA4E17EB1C092EF100B588F9 /* HelperVC.h */,
+				CA4E17EC1C092EF100B588F9 /* HelperVC.m */,
 				2BC2F59F1BF67543008F0FDF /* ViewControllerLoginUsername.h */,
 				2BC2F5A01BF67543008F0FDF /* ViewControllerLoginUsername.m */,
 				2BF513001BC752EB002B790B /* ViewControllerLogin.h */,
@@ -515,6 +520,7 @@
 				2B3B71AE1BC6EB9F001D766D /* AppDelegate.m in Sources */,
 				CA0341351BFD89CF006F5875 /* Consultation.m in Sources */,
 				CA0341341BFD89CF006F5875 /* Assessment.m in Sources */,
+				CA4E17ED1C092EF100B588F9 /* HelperVC.m in Sources */,
 				2BC2F5A11BF67543008F0FDF /* ViewControllerLoginUsername.m in Sources */,
 				2BD8E5B51BD9E77300A0DAEC /* ViewControllerNuevoPaciente.m in Sources */,
 				CA03412B1BFD8477006F5875 /* MomAssesmentViewController.m in Sources */,

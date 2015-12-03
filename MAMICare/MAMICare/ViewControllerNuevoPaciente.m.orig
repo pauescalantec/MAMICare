@@ -6,6 +6,7 @@
 //  Copyright © 2015 Paulina´s. All rights reserved.
 //
 
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "ViewControllerNuevoPaciente.h"
 #import "ViewControllerDetalle.h"
 #import "DBManager.h"
@@ -66,9 +67,8 @@
 }
 
 -(void)ShowSelectedDate
-{   NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
-    [formatter setDateFormat:@"dd/MMM/YYYY"];
-    self.txtNacimiento.text=[NSString stringWithFormat:@"%@",[formatter stringFromDate:datePicker.date]];
+{
+    self.txtNacimiento.text=[NSString stringWithFormat:@"%@",[Patient setDateFormatWithDate:datePicker.date]];
     [self.txtNacimiento resignFirstResponder];
 }
 
@@ -108,13 +108,15 @@
     newPatient.pAddress = addr;
     newPatient.email = self.txtCorreo.text;
     newPatient.curp = self.txtCURP.text;
-    
-     [newPatient save];
-    
 <<<<<<< HEAD
+    newPatient.birthDate = [Patient setDateFormatWithString:self.txtNacimiento.text];
+    NSLog(newPatient.birthDate);
 =======
-    // saving the patient in the global array
->>>>>>> 56aacd0e054afc37dfb3ff7b77e78ad258563fd6
+    newPatient.imageAssetURL = self.patientImageAssetURL; // new
+>>>>>>> 5247aed0019eded129a7dcf5dc2ef7507482976d
+    
+    [newPatient save];
+    
     return newPatient;
 }
 
@@ -219,6 +221,11 @@
     if ([picker sourceType] == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(self.outFoto.image, nil, nil, nil);
     }
+    
+    
+    // get the ref url of the picked user image
+    NSURL *refURL = [info valueForKey:UIImagePickerControllerReferenceURL];
+    self.patientImageAssetURL = [refURL absoluteString];
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
