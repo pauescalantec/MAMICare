@@ -211,7 +211,7 @@
     NSDate* birthDate = self.birthDate;
     
     NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
-                                       components:NSCalendarUnitYear fromDate:now toDate:self.birthDate options:0];
+                                       components:NSCalendarUnitYear fromDate:self.birthDate toDate:now options:0];
     return [ageComponents year];
 }
 

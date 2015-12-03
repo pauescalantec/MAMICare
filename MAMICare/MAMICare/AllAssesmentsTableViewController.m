@@ -75,7 +75,7 @@
     NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
     NSString *objConsulta = [NSString stringWithFormat:@"%@",
-                               [formatter stringFromDate:obj.startTime]];
+                               [formatter stringFromDate:obj.lastModified]];
     NSString *result = [@"Consulta con fecha: " stringByAppendingString:objConsulta];
     cell.txtConsulta.text = result;
     
