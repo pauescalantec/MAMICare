@@ -44,7 +44,7 @@
             tmpPatient.lastname2 = [[resultSet objectForKey:@"lastName2"]objectAtIndex:i];
         }
         if (![[[resultSet objectForKey:@"birthDate"] objectAtIndex:i] isEqualToString: @";"]) {
-            tmpPatient.birthDate = [Patient setDateFormatWithString:[[resultSet objectForKey:@"birthDate"]objectAtIndex:i]];
+            tmpPatient.birthDate =[[resultSet objectForKey:@"birthDate"] objectAtIndex:i];
         }
         if (![[[resultSet objectForKey:@"email"] objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.email = [[resultSet objectForKey:@"email"] objectAtIndex:i];
@@ -72,11 +72,12 @@
 - (BOOL) save {
         if (self.pAddress.save) {
                 NSString *querySQL = [NSString stringWithFormat:
-                                      @"INSERT INTO Patient (addressId, firstName, lastName1, lastName2,birthDate, email, curp, comments, isActive) VALUES (%d,'%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@')", self.pAddress.pID, self.name, self.lastname1, self.lastname2, self.birthDate, self.email, self.curp, self.comments, [NSString stringWithFormat:@"%d", self.isActive]];
+                                      @"INSERT INTO Patient (addressId, firstName, lastName1, lastName2,birthDate, email, curp, comments, isActive) VALUES (%d,'%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@')", self.pAddress.pID, self.name, self.lastname1, self.lastname2, self.birthDate, self.email, self.curp, @"comments!", [NSString stringWithFormat:@"%d", self.isActive]];
                 
                 if([[DBManager getSharedInstance] updateDB:querySQL] > 0) {
                         self.pID = [[DBManager getSharedInstance] getLastId];
                         [patientArray addObject:self];
+                    NSLog(@"OMG YES");
                         return YES;
                 }
         }
@@ -104,7 +105,7 @@
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
     [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
-    return [dateFormat dateFromString: date];
+    return [dateFormat dateFromString:[date substringToIndex:10]];
 }
 
 +(NSDate *)setDateFormatWithDate: (NSDate *)date {

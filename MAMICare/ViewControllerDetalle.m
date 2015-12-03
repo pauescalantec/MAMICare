@@ -59,8 +59,8 @@
         self.imgPatientImage.image = [UIImage imageNamed:[self.patient getPhotoURL]];
         self.lblFirstName.text = self.patient.name;
         self.lblLastNames.text = [self.patient getFullName];
-        self.lblAge.text = [NSString stringWithFormat:@"%ld",
-                            (long)[self.patient getAge]];
+//        self.lblAge.text = [NSString stringWithFormat:@"%ld",
+//                            (long)[self.patient getAge]];
         self.lblStreet.text = self.patient.pAddress.addressLine1;
         self.lblNeighborhood.text = self.patient.pAddress.addressLine2;
         self.lblCity.text = self.patient.pAddress.city;

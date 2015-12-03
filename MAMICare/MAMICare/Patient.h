@@ -17,7 +17,7 @@ extern NSMutableArray *patientArray;
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSString * lastname1;
 @property (nonatomic, strong) NSString * lastname2;
-@property (nonatomic, strong) NSDate * birthDate;
+@property (nonatomic, strong) NSString * birthDate;
 @property (nonatomic, strong) NSString * email;
 @property (nonatomic, strong) NSString * curp;
 @property (nonatomic, strong) NSString * comments;
@@ -32,7 +32,7 @@ extern NSMutableArray *patientArray;
 - (NSString *)getPhotoURL;
 + (void) loadAllPatients;
 +(NSDate*) setDateFormatWithDate: (NSDate*)date;
-+ (NSDate*) setDateFormatWithString: (NSString*) date;
++ (NSString*) setDateFormatWithString: (NSString*) date;
 - (BOOL) save;
 
 @end

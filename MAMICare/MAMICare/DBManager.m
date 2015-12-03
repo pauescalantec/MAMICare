@@ -110,6 +110,7 @@ static sqlite3_stmt *statement = nil;
                         NSLog(@"Prepared query");
                         if (sqlite3_step(statement) == SQLITE_DONE) {
                                 NSLog(@"Done");
+                            sqlite3_finalize(statement);
                                 return sqlite3_changes(database);
                         }
                 }
