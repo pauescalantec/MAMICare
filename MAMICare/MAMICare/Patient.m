@@ -44,7 +44,7 @@
             tmpPatient.lastname2 = [[resultSet objectForKey:@"lastName2"]objectAtIndex:i];
         }
         if (![[[resultSet objectForKey:@"birthDate"] objectAtIndex:i] isEqualToString: @";"]) {
-            tmpPatient.birthDate =[[resultSet objectForKey:@"birthDate"] objectAtIndex:i];
+            [tmpPatient setBirthDateFromString:[[resultSet objectForKey:@"birthDate"] objectAtIndex:i]];
         }
         if (![[[resultSet objectForKey:@"email"] objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.email = [[resultSet objectForKey:@"email"] objectAtIndex:i];
@@ -71,6 +71,7 @@
 
 - (BOOL) save {
         if (self.pAddress.save) {
+            
                 NSString *querySQL = [NSString stringWithFormat:
                                       @"INSERT INTO Patient (addressId, firstName, lastName1, lastName2,birthDate, email, curp, comments, isActive) VALUES (%d,'%@', '%@', '%@', '%@', '%@', '%@', '%@', '%@')", self.pAddress.pID, self.name, self.lastname1, self.lastname2, self.birthDate, self.email, self.curp, @"comments!", [NSString stringWithFormat:@"%d", self.isActive]];
                 
@@ -88,34 +89,24 @@
         return [NSString stringWithFormat:@"%@ %@", self.lastname1, self.lastname2];
 }
 
+
 - (NSInteger)getAge {
     NSDate* now = [NSDate date];
+    NSDate* birthDate = self.birthDate;
+    
     NSDateComponents* ageComponents = [[NSCalendar currentCalendar]
-                                       components:NSCalendarUnitYear
-                                       fromDate:self.birthDate
-                                       toDate:now
-                                       options:0];
+                                       components:NSCalendarUnitYear fromDate:now toDate:self.birthDate options:0];
     return [ageComponents year];
 }
 
-+(NSDate *)setDateFormatWithString: (NSString *)date {
+- (NSString *)getStringBirthDate {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateFormat setLocale:[NSLocale currentLocale]];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
-    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
-    return [dateFormat dateFromString:[date substringToIndex:10]];
+    return [dateFormat stringFromDate:self.birthDate];
 }
 
-+(NSDate *)setDateFormatWithDate: (NSDate *)date {
+- (void)setBirthDateFromString:(NSString *)strDate {
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    [dateFormat setTimeZone:[NSTimeZone systemTimeZone]];
-    [dateFormat setLocale:[NSLocale currentLocale]];
-    [dateFormat setDateFormat:@"yyyy-MM-dd"];
-    [dateFormat setFormatterBehavior:NSDateFormatterBehaviorDefault];
-    [dateFormat setLocale:[NSLocale localeWithLocaleIdentifier:@"ES"]];
-    return [dateFormat dateFromString: [dateFormat stringFromDate: date]];
+    self.birthDate = [dateFormat dateFromString:strDate];
 }
 
 - (NSString *)getPhotoURL {
