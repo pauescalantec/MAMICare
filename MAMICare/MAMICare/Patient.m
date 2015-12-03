@@ -70,7 +70,7 @@
         if (![[[resultSet objectForKey:@"comments"]objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.comments = [[resultSet objectForKey:@"comments"]objectAtIndex:i];
         }
-        if (![[[resultSet objectForKey:@"addressId"]objectAtIndex:i] isEqualToString: @";"]) {
+        if (![[[resultSet objectForKey:@"isActive"]objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.isActive = ([[[resultSet objectForKey:@"isActive"]objectAtIndex:i] integerValue] != 0);
         }
         if (![[[resultSet objectForKey:@"createdAt"]objectAtIndex:i] isEqualToString: @";"]) {
