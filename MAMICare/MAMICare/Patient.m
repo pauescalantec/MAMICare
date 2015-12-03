@@ -7,6 +7,7 @@
 //
 
 #import "Patient.h"
+#import "Consultation.h"
 
 @implementation Patient
 
@@ -18,6 +19,121 @@
                 self.lastname1 = lastname1;
         }
         return self;
+}
+
+-(NSMutableArray*) loadAllAssessments {
+    NSMutableArray *assessmentIDArray = [[NSMutableArray alloc] init];
+    NSNumber *assessID;
+    
+    NSString *querySQL = [NSString stringWithFormat:@"SELECT assessmentID FROM Consultation WHERE patientID=%d", self.pID];
+    NSMutableDictionary *resultSet = [[DBManager getSharedInstance] queryDB:querySQL];
+    int max = [[resultSet objectForKey:@"assessmentID"] count];
+    for(int i = 0; i < max; i++) {
+        if (![[[resultSet objectForKey:@"assessmentID"] objectAtIndex:i] isEqualToString: @";"]) {
+            NSNumberFormatter *numberFormat = [[NSNumberFormatter alloc] init];
+            numberFormat.numberStyle = NSNumberFormatterDecimalStyle;
+            assessID = [numberFormat numberFromString:[[resultSet objectForKey:@"assessmentID"] objectAtIndex:i]];
+        }
+        [assessmentIDArray addObject:assessID];
+    }
+    
+    NSMutableArray *assessmentArray = [[NSMutableArray alloc] init];
+    Assessment *tmpAssessment = [[Assessment alloc] init];
+    
+    NSString *strAssessmentID = [[NSString alloc] init];
+    NSString *fmt = @" (";
+    NSMutableString *query = [[NSMutableString alloc] init];
+    [query appendString:@"SELECT * FROM Assessment WHERE assessmentID IN "];
+    for(int i = 0; i < [assessmentIDArray count]; i++) {
+        fmt = (i < [assessmentIDArray count]) ? @"%d, " : @"%d";
+        strAssessmentID = [NSString stringWithFormat:fmt, [[assessmentIDArray objectAtIndex:i] integerValue]];
+        [query appendString: strAssessmentID];
+    }
+    [query appendString:@")"];
+    
+    querySQL = query;
+    resultSet = [[NSMutableDictionary alloc] init];
+    resultSet = [[DBManager getSharedInstance] queryDB:querySQL];
+    max = [[resultSet objectForKey:@"id"] count];
+    for(int i = 0; i < max; i++) {
+        tmpAssessment.pID = [[[resultSet objectForKey:@"id"] objectAtIndex:i] integerValue];
+        
+        if (![[[resultSet objectForKey:@"startTime"]objectAtIndex:i] isEqualToString: @";"]) {
+            NSString *epochString  = [[resultSet objectForKey:@"startTime"]objectAtIndex:i];
+            epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
+            NSTimeInterval seconds = [epochString doubleValue];
+            tmpAssessment.startTime = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+        }
+        
+        if (![[[resultSet objectForKey:@"endTime"] objectAtIndex:i] isEqualToString: @";"]) {
+            NSString *epochString  = [[resultSet objectForKey:@"endTime"]objectAtIndex:i];
+            epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
+            NSTimeInterval seconds = [epochString doubleValue];
+            tmpAssessment.endTime = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+        }
+        
+        if (![[[resultSet objectForKey:@"pulse"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.pulse = [[[resultSet objectForKey:@"pulse"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"oxygen"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.oxygen = [[[resultSet objectForKey:@"oxygen"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"systolicHeartRate"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.systolicHeartRate = [[[resultSet objectForKey:@"systolicHeartRate"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"diastolicHeartRate"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.diastolicHeartRate = [[[resultSet objectForKey:@"diastolicHeartRate"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"fetalHeartBeat"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.fetalHeartBeat = [[[resultSet objectForKey:@"fetalHeartBeat"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"fetalRegion"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.fetalRegion = [[[resultSet objectForKey:@"fetalRegion"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"urineTest"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.urineTest = [[[resultSet objectForKey:@"urineTest"] objectAtIndex:i] floatValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"contractionsExist"]objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.contractionsExist = ([[[resultSet objectForKey:@"contractionsExist"]objectAtIndex:i] integerValue] != 0);
+        }
+        
+        if (![[[resultSet objectForKey:@"contractionsTime"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.contractionsTime = [[[resultSet objectForKey:@"contractionsTime"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"weight"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.weight = [[[resultSet objectForKey:@"weight"] objectAtIndex:i] floatValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"fundalHeight"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.fundalHeight = [[[resultSet objectForKey:@"fundalHeight"] objectAtIndex:i] floatValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"basalGlucose"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.basalGlucose = [[[resultSet objectForKey:@"basalGlucose"] objectAtIndex:i] integerValue];
+        }
+        
+        if (![[[resultSet objectForKey:@"observations"] objectAtIndex:i] isEqualToString: @";"]) {
+            tmpAssessment.observations = [[resultSet objectForKey:@"observations"] objectAtIndex:i];
+        }
+        
+        if (![[[resultSet objectForKey:@"createdAt"]objectAtIndex:i] isEqualToString: @";"]) {
+            NSString *epochString  = [[resultSet objectForKey:@"createdAt"]objectAtIndex:i];
+            epochString = [epochString stringByReplacingOccurrencesOfString:@" " withString:@""];
+            NSTimeInterval seconds = [epochString doubleValue];
+            tmpAssessment.lastModified = [[NSDate alloc] initWithTimeIntervalSince1970:seconds];
+        }
+        [assessmentArray addObject:tmpAssessment];
+        tmpAssessment = [[Assessment alloc] init];
+    }
+    return assessmentArray;
 }
 
 +(void) loadAllPatients {
@@ -55,7 +171,7 @@
         if (![[[resultSet objectForKey:@"comments"]objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.comments = [[resultSet objectForKey:@"comments"]objectAtIndex:i];
         }
-        if (![[[resultSet objectForKey:@"addressId"]objectAtIndex:i] isEqualToString: @";"]) {
+        if (![[[resultSet objectForKey:@"isActive"]objectAtIndex:i] isEqualToString: @";"]) {
             tmpPatient.isActive = ([[[resultSet objectForKey:@"isActive"]objectAtIndex:i] integerValue] != 0);
         }
         if (![[[resultSet objectForKey:@"createdAt"]objectAtIndex:i] isEqualToString: @";"]) {
@@ -99,15 +215,7 @@
     return [ageComponents year];
 }
 
-- (NSString *)getStringBirthDate {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    return [dateFormat stringFromDate:self.birthDate];
-}
 
-- (void)setBirthDateFromString:(NSString *)strDate {
-    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-    self.birthDate = [dateFormat dateFromString:strDate];
-}
 
 - (NSString *)getPhotoURL {
     return [NSString stringWithFormat:@"patient_%ld.png", (long)self.pID];

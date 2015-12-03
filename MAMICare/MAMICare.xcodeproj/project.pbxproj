@@ -62,6 +62,7 @@
 		FF4143C71C02B2FC00DB79A1 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FF4143C61C02B2FC00DB79A1 /* DBManager.m */; };
 		FF4143C91C02B35400DB79A1 /* MAMICare.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */; };
 		FF4499791C0F5F390076FB01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF4499781C0F5F390076FB01 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		FF9D89FE1C0FEF2600358C9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF9D89FD1C0FEF2600358C9E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		FF4143C61C02B2FC00DB79A1 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		FF4143C81C02B35400DB79A1 /* MAMICare.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MAMICare.sqlite3; sourceTree = "<group>"; };
 		FF4499781C0F5F390076FB01 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FF9D89FD1C0FEF2600358C9E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +318,7 @@
 				CA0341311BFD89CF006F5875 /* Patient.m */,
 				CA0341321BFD89CF006F5875 /* SocialWorker.h */,
 				CA0341331BFD89CF006F5875 /* SocialWorker.m */,
+				FF9D89FD1C0FEF2600358C9E /* Main.storyboard */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				FF2353DE1C0924EC0049AE77 /* LaunchScreen.storyboard in Resources */,
 				2BF5130D1BC77A63002B790B /* w2.png in Resources */,
 				2BF513251BC784F6002B790B /* blueDot.png in Resources */,
+				FF9D89FE1C0FEF2600358C9E /* Main.storyboard in Resources */,
 				FF4499791C0F5F390076FB01 /* Main.storyboard in Resources */,
 				2BF5131F1BC78404002B790B /* baby.png in Resources */,
 				2BF513271BC78775002B790B /* back.ico in Resources */,
