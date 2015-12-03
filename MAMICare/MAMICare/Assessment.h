@@ -40,5 +40,6 @@
 - (BOOL)chemicalFieldsCompleted;
 - (BOOL)fetusFieldsCompleted;
 - (BOOL)save;
++(NSMutableArray*) loadAllAssessments;
 
 @end

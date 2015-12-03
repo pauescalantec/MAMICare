@@ -32,6 +32,8 @@ extern NSMutableArray *patientArray;
 - (NSString *)getFullName;
 - (NSInteger)getAge;
 + (void) loadAllPatients;
+- (void)setBirthDateFromString:(NSString *)strDate;
+- (NSString *)getStringBirthDate;
 - (BOOL) save;
 - (NSString *)getStringBirthDate;
 - (void)setBirthDateFromString:(NSString *)strDate;

@@ -16,7 +16,6 @@ static sqlite3_stmt *statement = nil;
 +(DBManager*)getSharedInstance{
         if (!sharedInstance) {
                 sharedInstance = [[super allocWithZone:NULL]init];
-                NSLog(@"Get shared instance");
                 [sharedInstance createDB];
         }
         return sharedInstance;
@@ -32,12 +31,10 @@ static sqlite3_stmt *statement = nil;
         
         if (sqlite3_open(thePath, &database) == SQLITE_OK)
         {
-                NSLog(@"Opened database");
                 NSString *querySQL = query;
                 const char *query_stmt = [querySQL UTF8String];
                 if (sqlite3_prepare_v2(database,
                                        query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-                        NSLog(@"Prepared query");
                         columnCount = sqlite3_column_count(statement);
                         dataCount = sqlite3_data_count(statement);
                         for (int i = 0; i < columnCount; i++) {
@@ -49,7 +46,6 @@ static sqlite3_stmt *statement = nil;
                         }
                         while (sqlite3_step(statement) == SQLITE_ROW)
                         {
-                                NSLog(@"Stepped into row");
                                 for (int i = 0; i < columnCount; i++) {
                                         NSString *value = [[NSString alloc] init];
                                         if (sqlite3_column_type(statement, i) != SQLITE_NULL) {
@@ -87,10 +83,8 @@ static sqlite3_stmt *statement = nil;
     
         BOOL isSuccess = YES;
         NSFileManager *filemgr = [NSFileManager defaultManager];
-        NSLog(@"the path should be next");
         NSLog(dbPath);
         if ([filemgr fileExistsAtPath: dbPath] == NO) {
-                NSLog(@"there is no path");
                 const char *dbpath = [dbPath UTF8String];
                 if (sqlite3_open(dbpath, &database) == SQLITE_OK) {
                         char *errMsg;
@@ -116,14 +110,12 @@ static sqlite3_stmt *statement = nil;
         sqlite3_reset(statement);
         const char *thePath = [dbPath UTF8String];
         if (sqlite3_open(thePath, &database) == SQLITE_OK) {
-                NSLog (@"Opened database");
                 const char *query_stmt = [query UTF8String];
                 NSLog(@"%s", query_stmt);
                 if (sqlite3_prepare_v2(database,
                                        query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-                        NSLog(@"Prepared query");
                         if (sqlite3_step(statement) == SQLITE_DONE) {
-                                NSLog(@"Done");
+//                            sqlite3_finalize(statement);
                                 return sqlite3_changes(database);
                         }
                 }
